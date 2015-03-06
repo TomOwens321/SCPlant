@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306005839) do
+ActiveRecord::Schema.define(version: 20150306010322) do
 
   create_table "common_names", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 20150306005839) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "plants", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "family_id"
+    t.integer  "genus_id"
+    t.integer  "species_id"
+    t.integer  "common_name_id"
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "plants", ["common_name_id"], name: "index_plants_on_common_name_id"
+  add_index "plants", ["family_id"], name: "index_plants_on_family_id"
+  add_index "plants", ["genus_id"], name: "index_plants_on_genus_id"
+  add_index "plants", ["species_id"], name: "index_plants_on_species_id"
 
   create_table "species", force: :cascade do |t|
     t.string   "name"

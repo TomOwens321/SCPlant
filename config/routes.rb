@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :plants
+
   resources :common_names
 
   resources :species
