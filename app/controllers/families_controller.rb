@@ -1,5 +1,6 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :edit, :update, :destroy]
+  autocomplete :family, :name, full: true
 
   # GET /families
   # GET /families.json

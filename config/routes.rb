@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :genus
 
-  resources :families
+  resources :families do
+    get :autocomplete_family_name, on: :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
