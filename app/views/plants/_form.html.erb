@@ -17,7 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :family_id %><br>
-    <%= f.autocomplete_field :family_id, autocomplete_family_name_families_path %>
+    <%= f.autocomplete_field :family_name, autocomplete_family_name_families_path,
+                              id_element: '#fam_id' %>
+    <%= f.hidden_field :family_id, id: "fam_id" %>
   </div>
   <div class="field">
     <%= f.label :genus_id %><br>
