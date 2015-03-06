@@ -6,9 +6,10 @@ class Plant < ActiveRecord::Base
   belongs_to :species
   belongs_to :common_name
 
-  def family_name( new_name = "" )
+  accepts_nested_attributes_for :family, allow_destroy: false
+
+  def family_name
     self.family.nil? ? "" : self.family.name
-    #name = Family.where(name: :family_name).first_or_create!.name
   end
 
 end

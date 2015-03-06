@@ -6,4 +6,15 @@ $ ->
   $('#plant_family_name').focusout ->
     theid = $('#fam_id').val()
     if (theid < 1)
-      alert(theid)
+      newName = $('#plant_family_name').val()
+      $.ajax
+        url: '/families'
+        type: 'POST'
+        data :
+          name: newName
+        success: (data,status,response) ->
+          $('#fam_id').val(data.id)
+          alert(data.id)
+        error: ->
+          alert("Failed")
+        dataType: "json"

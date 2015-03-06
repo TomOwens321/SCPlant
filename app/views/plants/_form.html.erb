@@ -16,6 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <% f.fields_for :family do |fam| %>
+      Hi
+    <% end %>
     <%= f.label :family_id %><br>
     <%= f.autocomplete_field :family_name, autocomplete_family_name_families_path,
                               id_element: '#fam_id' %>
