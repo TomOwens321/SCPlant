@@ -70,7 +70,10 @@ class FamiliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_params
-      #params.require(:family).permit(:name, :common_name, :description)
-      params.permit(:name, :common_name, :description)
+      if params[:family]
+        params.require(:family).permit(:name, :common_name, :description)
+      else
+        params.permit(:name, :common_name, :description)
+      end
     end
 end
