@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @genus.name %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @genus.common_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @genus.description %>
+</p>
+
+<%= link_to 'Edit', edit_genus_path(@genus) %> |
+<%= link_to 'Back', genus_index_path %>
