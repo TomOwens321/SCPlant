@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307151609) do
+ActiveRecord::Schema.define(version: 20150307173139) do
 
   create_table "common_names", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,20 @@ ActiveRecord::Schema.define(version: 20150307151609) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "area"
+    t.string   "city"
+    t.string   "county"
+    t.string   "state"
+    t.float    "lattitude"
+    t.float    "longitude"
+    t.integer  "altitude"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plants", force: :cascade do |t|
@@ -78,6 +92,22 @@ ActiveRecord::Schema.define(version: 20150307151609) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "vendors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "website"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
