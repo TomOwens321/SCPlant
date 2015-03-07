@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
 
-  $('#plant_family_name').focusout ->
+  $('#plant_family_name').change ->
     theid = $('#fam_id').val()
     if (theid < 1)
       newName = $('#plant_family_name').val()

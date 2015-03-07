@@ -1,5 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  autocomplete :vendor, :name, full: true
 
   # GET /vendors
   # GET /vendors.json
@@ -69,6 +70,10 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:name, :contact, :address1, :address2, :city, :state, :zipcode, :phone, :email, :website, :notes)
+      if params[:vendor]
+        params.require(:vendor).permit(:name, :contact, :address1, :address2, :city, :state, :zipcode, :phone, :email, :website, :notes)
+      else
+        params.permit(:name)
+      end  
     end
 end

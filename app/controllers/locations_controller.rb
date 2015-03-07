@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  autocomplete :location, :name, full: true
 
   # GET /locations
   # GET /locations.json
@@ -69,6 +70,10 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :area, :city, :county, :state, :lattitude, :longitude, :altitude, :notes)
+      if params[:location]
+        params.require(:location).permit(:name, :area, :city, :county, :state, :lattitude, :longitude, :altitude, :notes)
+      else
+        params.permit(:name)
+      end       
     end
 end
