@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306010322) do
+ActiveRecord::Schema.define(version: 20150307151609) do
 
   create_table "common_names", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,25 @@ ActiveRecord::Schema.define(version: 20150306010322) do
   add_index "plants", ["family_id"], name: "index_plants_on_family_id"
   add_index "plants", ["genus_id"], name: "index_plants_on_genus_id"
   add_index "plants", ["species_id"], name: "index_plants_on_species_id"
+
+  create_table "seeds", force: :cascade do |t|
+    t.string   "lot"
+    t.integer  "plant_id"
+    t.date     "collection_date"
+    t.integer  "vendor_id"
+    t.integer  "location_id"
+    t.string   "collected_by"
+    t.boolean  "clean"
+    t.integer  "quantity"
+    t.integer  "remaining"
+    t.text     "notes"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "seeds", ["location_id"], name: "index_seeds_on_location_id"
+  add_index "seeds", ["plant_id"], name: "index_seeds_on_plant_id"
+  add_index "seeds", ["vendor_id"], name: "index_seeds_on_vendor_id"
 
   create_table "species", force: :cascade do |t|
     t.string   "name"

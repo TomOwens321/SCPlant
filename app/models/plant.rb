@@ -2,6 +2,7 @@ class Plant < ActiveRecord::Base
   #attr_accessible :family_name
   after_validation :set_other_params
 
+  has_many   :seeds
   belongs_to :family
   belongs_to :genus
   belongs_to :species
@@ -17,6 +18,10 @@ class Plant < ActiveRecord::Base
 
   def species_name
     self.species.nil? ? "" : self.species.name
+  end
+
+  def seeds_on_hand
+    self.seeds.sum(:remaining)
   end
 
   private
