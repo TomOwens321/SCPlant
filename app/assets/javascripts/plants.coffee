@@ -5,8 +5,8 @@ $ ->
 
   $('#plant_family_name').change ->
     theid = $('#fam_id').val()
-    if (theid < 1)
-      newName = $('#plant_family_name').val()
+    newName = $('#plant_family_name').val()
+    if (theid < 1 && confirm "Add " + newName + " to Families?")      
       $.ajax
         url: '/families'
         type: 'POST'
