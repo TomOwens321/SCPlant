@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :seeds
 
-  resources :plants
+  resources :plants do
+    get :autocomplete_plant_name, on: :collection
+  end
 
   resources :common_names
 

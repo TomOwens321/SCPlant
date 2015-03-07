@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  autocomplete :plant, :name, full: true
 
   # GET /plants
   # GET /plants.json
@@ -69,6 +70,10 @@ class PlantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_params
-      params.require(:plant).permit(:name, :family_id, :genus_id, :species_id, :common_name_id, :description)
+      if params[:plant]
+        params.require(:plant).permit(:name, :family_id, :genus_id, :species_id, :common_name_id, :description)
+      else
+        params.permit(:name, :family_id, :genus_id, :species_id, :common_name_id, :description)
+      end
     end
 end

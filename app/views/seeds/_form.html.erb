@@ -17,7 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :plant_id %><br>
-    <%= f.collection_select :plant_id, Plant.all, :id, :name %>
+    <%= f.autocomplete_field :plant_name, autocomplete_plant_name_plants_path,
+                              id_element: '#plant_id' %>
+    <%= f.hidden_field :plant_id, id: "plant_id" %>
   </div>
   <div class="field">
     <%= f.label :collection_date %><br>
