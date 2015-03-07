@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Seeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lot</th>
+      <th>Plant</th>
+      <th>Collection date</th>
+      <th>Vendor</th>
+      <th>Location</th>
+      <th>Collected by</th>
+      <th>Clean</th>
+      <th>Quantity</th>
+      <th>Remaining</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seeds.each do |seed| %>
+      <tr>
+        <td><%= seed.lot %></td>
+        <td><%= seed.plant.name %></td>
+        <td><%= seed.collection_date %></td>
+        <td><%= seed.vendor %></td>
+        <td><%= seed.location %></td>
+        <td><%= seed.collected_by %></td>
+        <td><%= seed.clean %></td>
+        <td><%= seed.quantity %></td>
+        <td><%= seed.remaining %></td>
+        <td><%= seed.notes %></td>
+        <td><%= link_to 'Show', seed %></td>
+        <td><%= link_to 'Edit', edit_seed_path(seed) %></td>
+        <td><%= link_to 'Destroy', seed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seed', new_seed_path %>
