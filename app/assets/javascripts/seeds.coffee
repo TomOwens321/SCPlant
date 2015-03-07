@@ -50,3 +50,6 @@ $ ->
         error: ->
           alert("Failed")
         dataType: "json"
+
+  $('#seed_quantity').change ->
+    $('#seed_remaining').val($('#seed_quantity').val())
