@@ -14,7 +14,7 @@ $ ->
           name: newName
         success: (data,status,response) ->
           $('#fam_id').val(data.id)
-          alert(data.id)
+          # alert(data.id)
         error: ->
           alert("Failed")
         dataType: "json"
