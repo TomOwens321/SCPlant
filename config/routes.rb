@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :locations do
+    get :autocomplete_location_name, on: :collection
+  end
+
+  resources :vendors do
+    get :autocomplete_vendor_name, on: :collection
+  end
+
   resources :seeds
 
   resources :plants do

@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
 
-  $('#plant_family_name').focusout ->
+  $('#plant_family_name').change ->
     theid = $('#fam_id').val()
-    if (theid < 1)
-      newName = $('#plant_family_name').val()
+    newName = $('#plant_family_name').val()
+    if (theid < 1 && confirm "Add " + newName + " to Families?")      
       $.ajax
         url: '/families'
         type: 'POST'
@@ -14,7 +14,7 @@ $ ->
           name: newName
         success: (data,status,response) ->
           $('#fam_id').val(data.id)
-          alert(data.id)
+          # alert(data.id)
         error: ->
           alert("Failed")
         dataType: "json"

@@ -3,6 +3,9 @@ class Plant < ActiveRecord::Base
   after_validation :set_other_params
 
   has_many   :seeds
+  has_many   :locations, through: :seeds
+  has_many   :vendors,   through: :seeds
+  
   belongs_to :family
   belongs_to :genus
   belongs_to :species
