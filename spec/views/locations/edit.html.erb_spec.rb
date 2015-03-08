@@ -8,7 +8,7 @@ RSpec.describe "locations/edit", :type => :view do
       :city => "MyString",
       :county => "MyString",
       :state => "MyString",
-      :lattitude => 1.5,
+      :latitude => 1.5,
       :longitude => 1.5,
       :altitude => 1,
       :notes => "MyText"
@@ -30,7 +30,7 @@ RSpec.describe "locations/edit", :type => :view do
 
       assert_select "input#location_state[name=?]", "location[state]"
 
-      assert_select "input#location_lattitude[name=?]", "location[lattitude]"
+      assert_select "input#location_latitude[name=?]", "location[latitude]"
 
       assert_select "input#location_longitude[name=?]", "location[longitude]"
 

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150307173139) do
     t.string   "city"
     t.string   "county"
     t.string   "state"
-    t.float    "lattitude"
+    t.float    "latitude"
     t.float    "longitude"
     t.integer  "altitude"
     t.text     "notes"
