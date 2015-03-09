@@ -12,6 +12,20 @@ class Importer
     end
   end
 
+  def add_common_name
+    file = File.open @csv
+    file.each_line do |line|
+      cols = line.split(",")
+      name = cols[1] + " " + cols[3]
+      unless cols[4].empty?
+        name += " var.#{cols[4]}"
+      end
+      plant =  Plant.where(name: name).first
+      plant.common_name = cols[5]
+      plant.save
+    end
+  end
+
   def add_seed( cols )
     seed = Seed.create
     seed.plant = add_plant( cols )
