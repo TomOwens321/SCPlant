@@ -23,10 +23,10 @@
     <% @seeds.each do |seed| %>
       <tr>
         <td><%= seed.lot %></td>
-        <td><%= seed.plant_name %></td>
+        <td><%= link_to seed.plant_name, seed.plant %></td>
         <td><%= seed.collection_date %></td>
-        <td><%= seed.vendor_name %></td>
-        <td><%= seed.location_name %></td>
+        <td><%= link_to seed.vendor_name, seed.vendor %></td>
+        <td><%= link_to seed.location_name, seed.location %></td>
         <td><%= seed.collected_by %></td>
         <td><%= seed.clean %></td>
         <td><%= seed.quantity %></td>

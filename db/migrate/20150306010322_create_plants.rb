@@ -5,7 +5,7 @@ class CreatePlants < ActiveRecord::Migration
       t.references :family, index: true
       t.references :genus, index: true
       t.references :species, index: true
-      t.references :common_name, index: true
+      t.string :common_name
       t.text :description
 
       t.timestamps null: false
@@ -13,6 +13,5 @@ class CreatePlants < ActiveRecord::Migration
     add_foreign_key :plants, :families
     add_foreign_key :plants, :genus
     add_foreign_key :plants, :species
-    add_foreign_key :plants, :common_names
   end
 end
