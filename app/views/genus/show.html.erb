@@ -17,3 +17,14 @@
 
 <%= link_to 'Edit', edit_genus_path(@genus) %> |
 <%= link_to 'Back', genus_index_path %>
+
+<div id="plants">
+  <table class="display">
+    <thead>
+      <th colspan="5"><%= "Plants with Genus #{@genus.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @genus.plants.uniq %>
+    </tbody>
+  </table>
+</div>

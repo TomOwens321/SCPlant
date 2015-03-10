@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+  
+  $('#collection_date').datepicker({ dateFormat: "yy-mm-dd", defaultDate: $('#collection_date').val() })
+
 
   $('#seed_table').DataTable -> {
     paging: true }

@@ -32,3 +32,14 @@
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', :back %>
+
+<div id="locations">
+  <table class="display">
+    <thead>
+      <th colspan="4"><%= "Places to find #{@plant.name} in the wild" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "locations/location", collection: @plant.locations.uniq %>
+    </tbody>
+  </table>
+</div>
