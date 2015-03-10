@@ -17,3 +17,14 @@
 
 <%= link_to 'Edit', edit_family_path(@family) %> |
 <%= link_to 'Back', families_path %>
+
+<div id="plants">
+  <table class="display">
+    <thead>
+      <th colspan="5"><%= "Plants in #{@family.name} family" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @family.plants.uniq %>
+    </tbody>
+  </table>
+</div>

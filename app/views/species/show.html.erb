@@ -17,3 +17,14 @@
 
 <%= link_to 'Edit', edit_species_path(@species) %> |
 <%= link_to 'Back', species_index_path %>
+
+<div id="plants">
+  <table class="display">
+    <thead>
+      <th colspan="5"><%= "Plants with Species #{@species.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @species.plants.uniq %>
+    </tbody>
+  </table>
+</div>

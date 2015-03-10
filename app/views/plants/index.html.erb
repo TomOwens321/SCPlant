@@ -10,27 +10,11 @@
       <th>Genus</th>
       <th>Species</th>
       <th>Common name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @plants.each do |plant| %>
-      <tr>
-        <td><%= link_to plant.name, plant_path(plant) %></td>
-        <td><%= link_to plant.family_name, plant_family_path(plant) %></td>
-        <td><%= link_to plant.genus_name, plant.genus %></td>
-        <td><%= link_to plant.species_name, plant.species %></td>
-        <td><%= plant.common_name %></td>
-        <td><%= plant.description %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
-        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render partial: "plants/plant", collection: @plants %>
   </tbody>
 </table>
 
