@@ -3,7 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   
-  $('#collection_date').datepicker({ dateFormat: "yy-mm-dd", defaultDate: $('#collection_date').val() })
+  $('#collection_date').datepicker(
+    dateFormat: "yy-mm-dd",
+    defaultDate: $('#collection_date').val(),
+    changeMonth: true
+    changeYear: true
+  )
 
 
   $('#seed_table').DataTable -> {
