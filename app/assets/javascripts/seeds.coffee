@@ -7,7 +7,8 @@ $ ->
     dateFormat: "yy-mm-dd",
     defaultDate: $('#collection_date').val(),
     changeMonth: true
-    changeYear: true
+    changeYear: true,
+    yearRange: "-25:+0"
   )
 
 
