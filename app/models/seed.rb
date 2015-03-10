@@ -1,4 +1,7 @@
 class Seed < ActiveRecord::Base
+  validates :plant_id, presence: true
+  validates :lot, uniqueness: true
+  
   belongs_to :plant
   belongs_to :vendor
   belongs_to :location

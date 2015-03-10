@@ -1,6 +1,9 @@
 class Plant < ActiveRecord::Base
-  #attr_accessible :family_name
-  after_validation :set_other_params
+  validates :name, presence: true
+  validates :genus_id, presence: true
+  validates :species_id, presence: true
+
+  before_validation :set_other_params
 
   has_many   :seeds
   has_many   :locations, through: :seeds
