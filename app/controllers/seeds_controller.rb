@@ -14,7 +14,7 @@ class SeedsController < ApplicationController
 
   # GET /seeds/new
   def new
-    @seed = Seed.new
+    @seed = Seed.new(plant: Plant.find(params[:plant]))
   end
 
   # GET /seeds/1/edit
