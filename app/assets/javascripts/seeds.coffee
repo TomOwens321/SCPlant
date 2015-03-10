@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
 
+  $('#seed_table').DataTable -> {
+    paging: true }
+
   $('#seed_plant_name').change ->
     theid = $('#plant_id').val()
     newName = $('#seed_plant_name').val()

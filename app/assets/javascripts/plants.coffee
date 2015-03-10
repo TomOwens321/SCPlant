@@ -3,11 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
 
-  oTable = $('#plant_table').DataTable -> {
+  $('#plant_table').DataTable -> {
     paging: true }
-    #"bJQueryUI" : true,
-    #"bAutoWidth" : true,
-    #"sPaginationType" : "full_numbers" }
 
   $('#plant_family_name').change ->
     theid = $('#fam_id').val()
