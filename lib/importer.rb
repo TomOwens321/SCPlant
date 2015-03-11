@@ -26,13 +26,13 @@ class Importer
     end
   end
 
-  def add_plant_names
+  def add_plant_descriptions
     file = File.open @csv
     file.each_line do |line|
       cols = line.split("|")
       name = cols[0].rstrip
       plant = Plant.where(name: name).first_or_create
-      plant.common_name = cols[1].rstrip
+      plant.description = cols[1].rstrip
       plant.save
     end
   end
