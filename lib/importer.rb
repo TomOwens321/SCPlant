@@ -7,7 +7,7 @@ class Importer
   def do_import
     file = File.open @csv
     file.each_line do |line|
-      cols = line.split(",")
+      cols = line.split("|")
       add_seed( cols )
     end
   end
@@ -22,6 +22,17 @@ class Importer
       end
       plant =  Plant.where(name: name).first
       plant.common_name = cols[5]
+      plant.save
+    end
+  end
+
+  def add_plant_names
+    file = File.open @csv
+    file.each_line do |line|
+      cols = line.split("|")
+      name = cols[0].rstrip
+      plant = Plant.where(name: name).first_or_create
+      plant.common_name = cols[1].rstrip
       plant.save
     end
   end

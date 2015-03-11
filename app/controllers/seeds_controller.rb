@@ -14,7 +14,11 @@ class SeedsController < ApplicationController
 
   # GET /seeds/new
   def new
-    @seed = Seed.new(plant: Plant.find(params[:plant]))
+    if params[:plant]
+      @seed = Seed.new(plant: Plant.find(params[:plant]))
+    else
+      @seed = Seed.new
+    end
   end
 
   # GET /seeds/1/edit
