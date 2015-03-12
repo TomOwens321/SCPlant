@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307173139) do
+ActiveRecord::Schema.define(version: 20150312235036) do
 
   create_table "families", force: :cascade do |t|
     t.string   "name"
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(version: 20150307173139) do
     t.integer  "species_id"
     t.string   "common_name"
     t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "germination_code"
   end
 
   add_index "plants", ["family_id"], name: "index_plants_on_family_id"
