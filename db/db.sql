@@ -220,6 +220,7 @@ INSERT INTO "genus" VALUES(195,'Tulipia',NULL,NULL,'2015-03-11 01:15:04.966763',
 INSERT INTO "genus" VALUES(196,'Yucca',NULL,NULL,'2015-03-11 01:15:05.222884','2015-03-11 01:15:05.222884');
 INSERT INTO "genus" VALUES(197,'Zinnia',NULL,NULL,'2015-03-11 01:15:06.471601','2015-03-11 01:15:06.471601');
 INSERT INTO "genus" VALUES(198,'Pulsatilla',NULL,NULL,'2015-03-11 10:29:54.490583','2015-03-11 10:29:54.490583');
+INSERT INTO "genus" VALUES(199,'Apocynum',NULL,NULL,'2015-03-11 13:58:11.157332','2015-03-11 13:58:11.157332');
 CREATE TABLE "species" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "common_name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "species" VALUES(1,'juncea',NULL,NULL,'2015-03-08 16:35:50.397153','2015-03-08 16:35:50.397153');
 INSERT INTO "species" VALUES(2,'pensylvanica',NULL,NULL,'2015-03-08 16:35:51.287719','2015-03-08 16:35:51.287719');
@@ -558,6 +559,7 @@ INSERT INTO "species" VALUES(335,'albertii',NULL,NULL,'2015-03-11 01:15:04.96991
 INSERT INTO "species" VALUES(336,'baccata',NULL,NULL,'2015-03-11 01:15:05.228413','2015-03-11 01:15:05.228413');
 INSERT INTO "species" VALUES(337,'elata',NULL,NULL,'2015-03-11 01:15:05.581753','2015-03-11 01:15:05.581753');
 INSERT INTO "species" VALUES(338,'Harrimaniae',NULL,NULL,'2015-03-11 01:15:06.181827','2015-03-11 01:15:06.181827');
+INSERT INTO "species" VALUES(339,'androsaemifolium',NULL,NULL,'2015-03-11 13:58:11.166655','2015-03-11 13:58:11.166655');
 CREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "family_id" integer, "genus_id" integer, "species_id" integer, "common_name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "plants" VALUES(1,'Lygodesmia juncea',1,1,1,'Skeleton-Weed','','2015-03-08 16:35:50.398888','2015-03-11 01:14:19.751692');
 INSERT INTO "plants" VALUES(2,'Potentilla pensylvanica ',1,2,2,'Pennsylvania cinquefoil',NULL,'2015-03-08 16:35:51.289058','2015-03-09 12:53:16.859253');
@@ -962,8 +964,9 @@ INSERT INTO "plants" VALUES(403,'Yucca glauca',NULL,196,297,'Great Plains Yucca,
 INSERT INTO "plants" VALUES(404,'Yucca Harrimaniae',NULL,196,338,'Harriman''s Yucca','This yucca will remain very small and is best used up close where it can be seen because of its size. It has evergreen foliage and is most often described as cute.','2015-03-11 01:15:06.183401','2015-03-11 10:30:03.391247');
 INSERT INTO "plants" VALUES(405,'Zinnia grandiflora',NULL,197,213,'Prairie Zinnia',NULL,'2015-03-11 01:15:06.474931','2015-03-11 01:15:06.602536');
 INSERT INTO "plants" VALUES(406,'Pulsatilla patens (Anemone p.)',NULL,198,54,NULL,'This wildflower is know by most to be one of the early signs of spring.','2015-03-11 10:29:54.495939','2015-03-11 10:29:54.620041');
-INSERT INTO "plants" VALUES(407,'Aconitum columbianum',NULL,27,36,NULL,'Found in the wild in wet meadows and along stream beds this lovely perennial requires a bit more water. Up to 4 1/2'' tall graced with dark blue flowers spreading up the flower spike, each one shaped like a hood 3/4" long.','2015-03-11 10:29:55.550819','2015-03-11 10:29:55.745960');
+INSERT INTO "plants" VALUES(407,'Aconitum columbianum',NULL,27,36,'Native Monkshood','Found in the wild in wet meadows and along stream beds this lovely perennial requires a bit more water. Up to 4 1/2'' tall graced with dark blue flowers spreading up the flower spike, each one shaped like a hood 3/4" long.','2015-03-11 10:29:55.550819','2015-03-11 11:11:36.766974');
 INSERT INTO "plants" VALUES(408,'Antennaria dioica',NULL,37,55,NULL,'Like all Pussytoes this one is a great groundcover, with silver rosettes of foliage up to 2" across that blush pink in the fall and persist in the winter making it a year around winner. The flowers born in early summer rise on stems 3" tall in clusters of showy white heads covering the plant. Very nice choice! Does well in part sun.','2015-03-11 10:29:58.921259','2015-03-11 10:29:59.081418');
+INSERT INTO "plants" VALUES(409,'Apocynum androsaemifolium',NULL,199,339,NULL,NULL,'2015-03-11 13:58:11.168390','2015-03-11 13:58:11.168390');
 CREATE TABLE "seeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lot" varchar, "plant_id" integer, "collection_date" date, "vendor_id" integer, "location_id" integer, "collected_by" varchar, "clean" boolean, "quantity" integer, "remaining" integer, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "seeds" VALUES(1,'SCS-0001',1,'2001-12-28',NULL,1,'Renae Betsy','t',100,100,'','2015-03-08 16:35:50.123619','2015-03-10 12:02:29.960182');
 INSERT INTO "seeds" VALUES(2,'SCS-0002',2,'2006-08-09',NULL,2,'Renae Betsy','f',150,150,NULL,'2015-03-08 16:35:51.125087','2015-03-08 16:35:51.939316');
@@ -1001,6 +1004,7 @@ INSERT INTO "seeds" VALUES(39,'SCS-0039',30,'2015-03-10',NULL,19,'Betsy /Tom','t
 INSERT INTO "seeds" VALUES(40,'SCS-0040',81,'2007-12-14',6,20,'390','t',2000,2000,'','2015-03-11 01:31:40.253255','2015-03-11 01:31:40.253255');
 INSERT INTO "seeds" VALUES(41,'SCS-0041',136,'2008-09-01',NULL,NULL,'John Nevant','f',137,137,'','2015-03-11 01:34:04.828639','2015-03-11 01:34:04.828639');
 INSERT INTO "seeds" VALUES(42,'SCS-0042',137,'2006-08-22',NULL,21,'Betsy','f',300,300,'','2015-03-11 01:36:34.479982','2015-03-11 01:36:34.479982');
+INSERT INTO "seeds" VALUES(43,'SCS-0043',409,'2009-08-27',NULL,NULL,'Betsy /Tom','f',400,400,'','2015-03-11 14:01:01.483698','2015-03-11 14:01:21.474462');
 CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "contact" varchar, "address1" varchar, "address2" varchar, "city" varchar, "state" varchar, "zipcode" varchar, "phone" varchar, "email" varchar, "website" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "vendors" VALUES(1,'Granite',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-08 16:35:55.724509','2015-03-08 16:35:55.724509');
 INSERT INTO "vendors" VALUES(2,'WNS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-08 16:35:57.520491','2015-03-08 16:35:57.520491');
@@ -1030,13 +1034,14 @@ INSERT INTO "locations" VALUES(18,'Mom''s Cabin',NULL,NULL,NULL,NULL,NULL,NULL,N
 INSERT INTO "locations" VALUES(19,'NCAR',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-09 14:30:49.604758','2015-03-09 14:30:49.604758');
 INSERT INTO "locations" VALUES(20,'UT',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-11 01:30:46.514040','2015-03-11 01:30:46.514040');
 INSERT INTO "locations" VALUES(21,'Plainview, CO',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-11 01:35:28.741331','2015-03-11 01:35:28.741331');
+INSERT INTO "locations" VALUES(23,'Glenwood Canyon',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-11 14:01:42.063050','2015-03-11 14:01:42.063050');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('seeds',42);
-INSERT INTO "sqlite_sequence" VALUES('genus',198);
-INSERT INTO "sqlite_sequence" VALUES('species',338);
-INSERT INTO "sqlite_sequence" VALUES('plants',408);
+INSERT INTO "sqlite_sequence" VALUES('seeds',43);
+INSERT INTO "sqlite_sequence" VALUES('genus',199);
+INSERT INTO "sqlite_sequence" VALUES('species',339);
+INSERT INTO "sqlite_sequence" VALUES('plants',409);
 INSERT INTO "sqlite_sequence" VALUES('families',11);
-INSERT INTO "sqlite_sequence" VALUES('locations',21);
+INSERT INTO "sqlite_sequence" VALUES('locations',23);
 INSERT INTO "sqlite_sequence" VALUES('vendors',6);
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 CREATE INDEX "index_plants_on_family_id" ON "plants" ("family_id");
