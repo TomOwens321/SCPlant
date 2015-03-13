@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @production_card.card_number %>
+</p>
+
+<p>
+  <strong>Plant:</strong>
+  <%= @production_card.plant %>
+</p>
+
+<p>
+  <strong>Seed:</strong>
+  <%= @production_card.seed %>
+</p>
+
+<p>
+  <strong>Seed quantity:</strong>
+  <%= @production_card.seed_quantity %>
+</p>
+
+<p>
+  <strong>Quantity needed:</strong>
+  <%= @production_card.quantity_needed %>
+</p>
+
+<p>
+  <strong>Quantity produced:</strong>
+  <%= @production_card.quantity_produced %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @production_card.order %>
+</p>
+
+<p>
+  <strong>Seed decremented:</strong>
+  <%= @production_card.seed_decremented %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @production_card.active %>
+</p>
+
+<%= link_to 'Edit', edit_production_card_path(@production_card) %> |
+<%= link_to 'Back', production_cards_path %>

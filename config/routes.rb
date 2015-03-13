@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :production_cards
+
   resources :locations do
     get :autocomplete_location_name, on: :collection
   end
