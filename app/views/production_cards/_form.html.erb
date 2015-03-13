@@ -23,7 +23,7 @@
   </div>
   <div class="field">
     <%= f.label :seed_id %><br>
-    <%= f.collection_select :seed_id, @production_card.seed_lots, :id, :lot %>
+    <%= f.collection_select :seed_id, Seed.all, :id, :lot %>
   </div>
   <div class="field">
     <%= f.label :seed_quantity %><br>
