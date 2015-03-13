@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Production Cards</h1>
+
+<table id="production_card_table" class="display">
+  <thead>
+    <tr>
+      <th>Card number</th>
+      <th>Plant</th>
+      <th>Seed</th>
+      <th>Seed quantity</th>
+      <th>Quantity needed</th>
+      <th>Quantity produced</th>
+      <th>Order</th>
+      <th>Seed decremented</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @production_cards.each do |production_card| %>
+      <tr>
+        <td><%= production_card.card_number %></td>
+        <td><%= production_card.plant %></td>
+        <td><%= production_card.seed %></td>
+        <td><%= production_card.seed_quantity %></td>
+        <td><%= production_card.quantity_needed %></td>
+        <td><%= production_card.quantity_produced %></td>
+        <td><%= production_card.order %></td>
+        <td><%= production_card.seed_decremented %></td>
+        <td><%= production_card.active %></td>
+        <td><%= link_to 'Show', production_card %></td>
+        <td><%= link_to 'Edit', edit_production_card_path(production_card) %></td>
+        <td><%= link_to 'Destroy', production_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Production card', new_production_card_path %>
