@@ -585,7 +585,7 @@ INSERT INTO "plants" VALUES(18,'Ribes wolfii',5,8,18,'"Wolf Currant Rothrock Cur
 INSERT INTO "plants" VALUES(19,'Penstemon virgatus var.asa-grayi',7,10,19,'Tall Beardtongue',NULL,'2015-03-08 16:36:05.256946','2015-03-09 12:53:18.757025',NULL);
 INSERT INTO "plants" VALUES(20,'Ribes montigenum',5,8,20,'Gooseberry Currant',NULL,'2015-03-08 16:36:05.868982','2015-03-12 23:54:59.403747','WW(72)-CT(90-120)-CTD');
 INSERT INTO "plants" VALUES(21,'Liatris punctata',1,14,21,'Spotted Gayfeather, Dwarf Gayfeather',NULL,'2015-03-08 16:36:06.720359','2015-03-12 23:54:50.491183','DS-CTD');
-INSERT INTO "plants" VALUES(22,'Monardella  odoratissima',8,15,22,'"Mountain Coyote Mint Horsemint"',NULL,'2015-03-08 16:36:07.297645','2015-03-09 12:53:19.056765',NULL);
+INSERT INTO "plants" VALUES(22,'Monardella  odoratissima',8,15,22,'Mountain Coyote Mint, Horsemint','','2015-03-08 16:36:07.297645','2015-03-13 01:22:50.603712',NULL);
 INSERT INTO "plants" VALUES(23,'Penstemon watsonii',7,10,23,'Watson''s Penstemon',NULL,'2015-03-08 16:36:08.059211','2015-03-09 12:53:19.158652',NULL);
 INSERT INTO "plants" VALUES(24,'Oenothera caespitosa',9,16,24,'White Stemless Evening-Primrose, Gumbo Lily',NULL,'2015-03-08 16:36:08.737534','2015-03-12 23:54:52.578065','HY-CT(30-60)-CTD');
 INSERT INTO "plants" VALUES(25,'Philadelphus microphyllus',10,17,25,'Little-leaf Mockorange',NULL,'2015-03-08 16:36:09.697288','2015-03-12 23:54:56.659313','CT(60-90)-CTD');
