@@ -21,3 +21,4 @@ $ ->
         error: ->
           alert("Failed")
         dataType: "json"
+        

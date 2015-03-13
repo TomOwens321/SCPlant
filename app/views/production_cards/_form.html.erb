@@ -18,8 +18,8 @@
   <div class="field">
     <%= f.label :plant_id %><br>
     <%= f.autocomplete_field :plant_name, autocomplete_plant_name_plants_path,
-                              id_element: '#plant_id' %>
-    <%= f.hidden_field :plant_id, id: "plant_id" %>
+                              id_element: '#plnt_id', :update_elements => {} %>
+    <%= f.hidden_field :plant_id, id: "plnt_id" %>
   </div>
   <div class="field">
     <%= f.label :seed_id %><br>

@@ -6,4 +6,5 @@ $ ->
   $('#production_card_table').DataTable -> {
     paging: true }
   
-
+  $('#plnt_name').change ->
+    alert 'choose this plant?'
