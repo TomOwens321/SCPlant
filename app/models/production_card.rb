@@ -27,7 +27,7 @@ class ProductionCard < ActiveRecord::Base
 
   def decrement_seed
     return if self.seed_decremented
-    return if self.seed.nil? || self.seed_quantity < 1
+    return if self.seed.nil? || self.seed_quantity.nil? || self.seed_quantity < 1
     seed = self.seed
     seed.remaining -= self.seed_quantity
     seed.save

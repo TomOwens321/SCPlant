@@ -14,8 +14,8 @@ class ProductionCardsController < ApplicationController
   end
 
   # GET /production_cards/new
-  def new
-    @production_card = ProductionCard.new
+  def new( params = {} )
+    @production_card = ProductionCard.new(params)
   end
 
   # GET /production_cards/1/edit
