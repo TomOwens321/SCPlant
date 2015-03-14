@@ -5,6 +5,7 @@ class Seed < ActiveRecord::Base
   belongs_to :plant
   belongs_to :vendor
   belongs_to :location
+  has_many   :production_cards
 
   after_initialize :defaults
 

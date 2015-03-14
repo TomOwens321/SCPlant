@@ -6,6 +6,8 @@ class ProductionCard < ActiveRecord::Base
   belongs_to :seed
   belongs_to :order
 
+  has_many   :production_steps
+
   after_initialize :defaults
 
   def plant_name
