@@ -1,18 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Card number:</strong>
-  <%= @production_card.card_number %>
-</p>
-
-<p>
-  <strong>Plant:</strong>
-  <%= @production_card.plant_name %>
-</p>
-
-<%= link_to 'Edit', edit_production_card_path(@production_card) %> |
-<%= link_to 'Back', production_cards_path %>
-<%= form_for(@production_card) do |f| %>
   <% if @production_card.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@production_card.errors.count, "error") %> prohibited this production_card from being saved:</h2>
@@ -24,35 +10,68 @@
       </ul>
     </div>
   <% end %>
-    <div class="field">
-    <%= f.label :seed_id %><br>
-    <%= f.collection_select :seed_id, Seed.where(plant: @production_card.plant), :id, :lot_name, prompt: "Select a seed lot." %>
-  </div>
-  <div class="field">
-    <%= f.label :seed_quantity %><br>
-    <%= f.number_field :seed_quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity_needed %><br>
-    <%= f.number_field :quantity_needed %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity_produced %><br>
-    <%= f.number_field :quantity_produced %>
-  </div>
-  <div class="field">
-    <%= f.label :order_id %><br>
-    <%= f.text_field :order_id %>
-  </div>
-  <div class="field">
-    <%= f.label :seed_decremented %><br>
-    <%= f.check_box :seed_decremented %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<%= form_for(@production_card) do |f| %>
+  <table class="display" id="prod_card">
+    <thead>
+      <tr>
+        <th colspan="4"><%= "Sun Chaser Production Card #{@production_card.card_number}" %></th>
+      </tr>
+      <tr>
+        <th colspan="4"><%= @production_card.plant_name %></th>
+      </tr>
+      <tr>
+        <th>Code:</th>
+        <th><%= @production_card.plant.germination_code %></th>
+        <th><%= f.label :order_id %></th>
+        <td><%= f.text_field :order_id %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.label :seed_id %></td>
+        <td><%= f.collection_select :seed_id, Seed.where(plant: @production_card.plant), :id, :lot_name, prompt: "Select a seed lot." %></td>
+        <td><%= f.label :seed_quantity %></td>
+        <td><%= f.number_field :seed_quantity %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :quantity_needed %></td>
+        <td><%= f.number_field :quantity_needed %></td>
+        <td><%= f.label :quantity_produced %></td>
+        <td><%= f.number_field :quantity_produced %></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Removed from Seed:</td>
+        <td><%= @production_card.seed_decremented %></td>
+        <td><%= f.label :active %></td>
+        <td><%= f.check_box :active %></td>
+      </tr>
+      <tr>
+        <th colspan="4">Production Steps</th>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <th>Process</th>
+        <th>Description</th>
+        <th>Notes</th>
+      </tr>
+      <%= render partial: "production_steps/list", collection: @steps %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><%= f.submit %></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
 <% end %>
+
+<p>
+  New Production Step<br>
+  <% @production_step = ProductionStep.new(production_card: @production_card) %>
+  <%= render "production_steps/form" %>
+</p>
+<%= link_to 'Edit', edit_production_card_path(@production_card) %> |
+<%= link_to 'Back', production_cards_path %>
