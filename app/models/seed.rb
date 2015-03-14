@@ -5,6 +5,7 @@ class Seed < ActiveRecord::Base
   belongs_to :plant
   belongs_to :vendor
   belongs_to :location
+  has_many   :production_cards
 
   after_initialize :defaults
 
@@ -18,6 +19,10 @@ class Seed < ActiveRecord::Base
 
   def location_name
     self.location.nil? ? "" : self.location.name
+  end
+
+  def lot_name
+    self.lot + " " + self.plant_name + " : " + self.remaining.to_s
   end
 
   def defaults

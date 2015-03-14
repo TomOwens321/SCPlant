@@ -18,36 +18,8 @@
   <div class="field">
     <%= f.label :plant_id %><br>
     <%= f.autocomplete_field :plant_name, autocomplete_plant_name_plants_path,
-                              id_element: '#plant_id' %>
-    <%= f.hidden_field :plant_id, id: "plant_id" %>
-  </div>
-  <div class="field">
-    <%= f.label :seed_id %><br>
-    <%= f.collection_select :seed_id, Seed.all, :id, :lot %>
-  </div>
-  <div class="field">
-    <%= f.label :seed_quantity %><br>
-    <%= f.number_field :seed_quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity_needed %><br>
-    <%= f.number_field :quantity_needed %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity_produced %><br>
-    <%= f.number_field :quantity_produced %>
-  </div>
-  <div class="field">
-    <%= f.label :order_id %><br>
-    <%= f.text_field :order_id %>
-  </div>
-  <div class="field">
-    <%= f.label :seed_decremented %><br>
-    <%= f.check_box :seed_decremented %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
+                              id_element: '#plnt_id', :update_elements => {} %>
+    <%= f.hidden_field :plant_id, id: "plnt_id" %>
   </div>
   <div class="actions">
     <%= f.submit %>

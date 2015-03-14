@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :production_steps
+
   resources :production_cards
 
   resources :locations do

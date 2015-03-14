@@ -8,6 +8,7 @@ class Plant < ActiveRecord::Base
   has_many   :seeds
   has_many   :locations, through: :seeds
   has_many   :vendors,   through: :seeds
+  has_many   :production_cards
   
   belongs_to :family
   belongs_to :genus

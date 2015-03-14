@@ -10,11 +10,12 @@ class ProductionCardsController < ApplicationController
   # GET /production_cards/1
   # GET /production_cards/1.json
   def show
+    @steps = @production_card.production_steps
   end
 
   # GET /production_cards/new
-  def new
-    @production_card = ProductionCard.new
+  def new( params = {} )
+    @production_card = ProductionCard.new(params)
   end
 
   # GET /production_cards/1/edit
