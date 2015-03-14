@@ -9,7 +9,7 @@ class ProductionCard < ActiveRecord::Base
   after_initialize :defaults
 
   def plant_name
-    self.plant.nil? ? "" : self.plant.plant_name
+    self.plant.nil? ? "" : self.plant.name
   end
 
   def seed_lots

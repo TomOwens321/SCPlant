@@ -7,43 +7,52 @@
 
 <p>
   <strong>Plant:</strong>
-  <%= @production_card.plant %>
-</p>
-
-<p>
-  <strong>Seed:</strong>
-  <%= @production_card.seed %>
-</p>
-
-<p>
-  <strong>Seed quantity:</strong>
-  <%= @production_card.seed_quantity %>
-</p>
-
-<p>
-  <strong>Quantity needed:</strong>
-  <%= @production_card.quantity_needed %>
-</p>
-
-<p>
-  <strong>Quantity produced:</strong>
-  <%= @production_card.quantity_produced %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @production_card.order %>
-</p>
-
-<p>
-  <strong>Seed decremented:</strong>
-  <%= @production_card.seed_decremented %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @production_card.active %>
+  <%= @production_card.plant_name %>
 </p>
 
 <%= link_to 'Edit', edit_production_card_path(@production_card) %> |
 <%= link_to 'Back', production_cards_path %>
+<%= form_for(@production_card) do |f| %>
+  <% if @production_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production_card.errors.count, "error") %> prohibited this production_card from being saved:</h2>
+
+      <ul>
+      <% @production_card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+    <%= f.label :seed_id %><br>
+    <%= f.collection_select :seed_id, Seed.where(plant: @production_card.plant), :id, :lot_name, prompt: "Select a seed lot." %>
+  </div>
+  <div class="field">
+    <%= f.label :seed_quantity %><br>
+    <%= f.number_field :seed_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_needed %><br>
+    <%= f.number_field :quantity_needed %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_produced %><br>
+    <%= f.number_field :quantity_produced %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.text_field :order_id %>
+  </div>
+  <div class="field">
+    <%= f.label :seed_decremented %><br>
+    <%= f.check_box :seed_decremented %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -20,6 +20,10 @@ class Seed < ActiveRecord::Base
     self.location.nil? ? "" : self.location.name
   end
 
+  def lot_name
+    self.lot + " " + self.plant_name + " : " + self.remaining.to_s
+  end
+
   def defaults
     myID = Seed.maximum(:id).nil? ? 1 : Seed.maximum(:id) + 1
     self.lot ||= "SCS-%04d" % myID
