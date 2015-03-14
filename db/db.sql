@@ -573,7 +573,7 @@ CREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" v
 INSERT INTO "plants" VALUES(1,'Lygodesmia juncea',1,1,1,'Skeleton-Weed','','2015-03-08 16:35:50.398888','2015-03-12 23:54:26.835094','DS-LC');
 INSERT INTO "plants" VALUES(2,'Potentilla pensylvanica ',1,2,2,'Pennsylvania cinquefoil',NULL,'2015-03-08 16:35:51.289058','2015-03-09 12:53:16.859253',NULL);
 INSERT INTO "plants" VALUES(3,'Prunus  virginiana var.saximontana',2,3,3,'Pin Cherry',NULL,'2015-03-08 16:35:52.166794','2015-03-09 12:53:16.958749',NULL);
-INSERT INTO "plants" VALUES(4,'Ratibida columnifera var.pulcherrima',1,4,4,'Red Prairie Coneflower',NULL,'2015-03-08 16:35:52.955510','2015-03-09 12:53:17.092712',NULL);
+INSERT INTO "plants" VALUES(4,'Ratibida columnifera var.pulcherrima',1,4,4,'Red Prairie Coneflower','','2015-03-08 16:35:52.955510','2015-03-14 19:47:03.955523','DS-CTD');
 INSERT INTO "plants" VALUES(5,'Opuntia phaeacantha',3,5,5,'Pricklypear',NULL,'2015-03-08 16:35:53.642147','2015-03-09 12:53:17.192413',NULL);
 INSERT INTO "plants" VALUES(6,'Rhus trilobata var.simplicifolia',4,6,6,'Single-leaf Sumac',NULL,'2015-03-08 16:35:54.527891','2015-03-09 12:53:17.290840',NULL);
 INSERT INTO "plants" VALUES(7,'Purshia mexicana',2,7,7,'Mexican Cliffrose',NULL,'2015-03-08 16:35:55.464566','2015-03-09 12:53:17.393850',NULL);
@@ -989,7 +989,7 @@ CREATE TABLE "seeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lot" var
 INSERT INTO "seeds" VALUES(1,'SCS-0001',1,'2001-12-28',NULL,1,'Renae Betsy','t',100,100,'','2015-03-08 16:35:50.123619','2015-03-10 12:02:29.960182');
 INSERT INTO "seeds" VALUES(2,'SCS-0002',2,'2006-08-09',NULL,2,'Renae Betsy','f',150,150,NULL,'2015-03-08 16:35:51.125087','2015-03-08 16:35:51.939316');
 INSERT INTO "seeds" VALUES(3,'SCS-0003',3,'2005-07-27',NULL,3,'Betsy','t',300,300,NULL,'2015-03-08 16:35:52.050719','2015-03-08 16:35:52.677257');
-INSERT INTO "seeds" VALUES(4,'SCS-0004',4,'2006-08-24',NULL,4,'','f',500,500,NULL,'2015-03-08 16:35:52.799595','2015-03-08 16:35:53.379921');
+INSERT INTO "seeds" VALUES(4,'SCS-0004',4,'2006-08-24',NULL,4,'','f',500,470,NULL,'2015-03-08 16:35:52.799595','2015-03-14 19:29:55.883198');
 INSERT INTO "seeds" VALUES(5,'SCS-0005',5,'2002-07-07',NULL,5,'Betsy','t',200,200,'','2015-03-08 16:35:53.513696','2015-03-10 12:29:24.386017');
 INSERT INTO "seeds" VALUES(6,'SCS-0006',6,NULL,NULL,6,'Betsy / Tom','t',80,80,NULL,'2015-03-08 16:35:54.406151','2015-03-08 16:35:55.188104');
 INSERT INTO "seeds" VALUES(7,'SCS-0007',7,NULL,1,NULL,'Come-36927','t',1500,1500,NULL,'2015-03-08 16:35:55.333186','2015-03-08 16:35:55.914380');
@@ -1083,7 +1083,9 @@ INSERT INTO "locations" VALUES(28,'Penock Peak Rd',NULL,NULL,NULL,NULL,NULL,NULL
 INSERT INTO "locations" VALUES(29,'Mount Zion',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-13 02:45:37.057659','2015-03-13 02:45:37.057659');
 INSERT INTO "locations" VALUES(30,'Olie''s Garden',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-13 03:02:30.935635','2015-03-13 03:02:30.935635');
 CREATE TABLE "production_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_number" varchar, "plant_id" integer, "seed_id" integer, "seed_quantity" integer, "quantity_needed" integer, "quantity_produced" integer, "order_id" integer, "seed_decremented" boolean, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "production_cards" VALUES(1,'SCP-00001',4,4,30,12,NULL,NULL,'t','t','2015-03-14 19:29:29.671860','2015-03-14 19:29:55.884876');
 CREATE TABLE "production_steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "production_card_id" integer, "step_date" date, "process" varchar, "description" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "production_steps" VALUES(1,1,'2015-03-11','DS-CTD','Sow the seed','In clay pots with cloth','2015-03-14 19:30:50.033726','2015-03-14 19:30:50.033726');
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('seeds',61);
 INSERT INTO "sqlite_sequence" VALUES('genus',200);
@@ -1092,6 +1094,8 @@ INSERT INTO "sqlite_sequence" VALUES('plants',418);
 INSERT INTO "sqlite_sequence" VALUES('families',13);
 INSERT INTO "sqlite_sequence" VALUES('locations',30);
 INSERT INTO "sqlite_sequence" VALUES('vendors',8);
+INSERT INTO "sqlite_sequence" VALUES('production_cards',1);
+INSERT INTO "sqlite_sequence" VALUES('production_steps',1);
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 CREATE INDEX "index_plants_on_family_id" ON "plants" ("family_id");
 CREATE INDEX "index_plants_on_genus_id" ON "plants" ("genus_id");

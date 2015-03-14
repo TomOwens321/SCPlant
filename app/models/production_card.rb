@@ -7,7 +7,6 @@ class ProductionCard < ActiveRecord::Base
   belongs_to :order
 
   has_many   :production_steps
-  accepts_nested_attributes_for :production_steps
 
   after_initialize :defaults
   before_save       :decrement_seed
@@ -19,6 +18,12 @@ class ProductionCard < ActiveRecord::Base
   def seed_lots
     self.plant.nil? ? [] : self.plant.seeds
   end
+
+  def first_item_date
+    item = self.production_steps.first
+    item.nil? ? "" : item.step_date
+  end
+
 
   def defaults
     myID = ProductionCard.maximum(:id).nil? ? 1 : ProductionCard.maximum(:id) + 1
