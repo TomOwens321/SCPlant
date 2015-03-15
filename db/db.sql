@@ -600,9 +600,9 @@ INSERT INTO "plants" VALUES(27,'Symphyotrichum falcatum',1,19,27,NULL,'','2015-0
 INSERT INTO "plants" VALUES(28,'Amelanchier alnifolia',2,20,28,'Saskatoon Serviceberry','Growing to 20'' at maturity this lovely tree-shrub is absolutely covered with clusters of white blossoms in the late spring. Attractive rounded bluish green foliage up to 1" wide turns lovely shades of yellow in the fall. Need some water.','2015-03-08 22:35:43.718774','2015-03-12 23:54:32.769756','WW(24)-CT(90-120)-CTD');
 INSERT INTO "plants" VALUES(29,'Androsace septentrionalis',11,21,29,NULL,'','2015-03-08 22:39:36.405630','2015-03-08 22:45:21.600720',NULL);
 INSERT INTO "plants" VALUES(30,'Amorpha nana',NULL,22,30,'Dwarf indigo','A small shrub only 2 1/2'' at maturity with fine feathery foliage that is covered with little hairs that make them look gray and fuzzy. Very drought tolerant. Flowers are purple spikes born in mid-summer. Fall foliage is insignificant.','2015-03-09 14:29:42.046244','2015-03-12 23:54:33.049077','WW(72)-CT(60-90)-CTD');
-INSERT INTO "plants" VALUES(32,'Acer glabrum var.douglasii',NULL,24,32,NULL,NULL,'2015-03-09 14:34:03.389451','2015-03-09 14:34:03.389451',NULL);
+INSERT INTO "plants" VALUES(32,'Acer glabrum var.douglasii',13,24,32,'','','2015-03-09 14:34:03.389451','2015-03-15 11:03:51.619512','');
 INSERT INTO "plants" VALUES(33,'Abronia fragrans',NULL,25,33,'Sand-Verbena, Prairie Snowball','A graceful mound of loose stems, graced with large umbels of showy, fragrant white flowers. Blooms for up to six weeks. Likes it dry.','2015-03-11 01:13:08.666693','2015-03-11 10:29:54.233512',NULL);
-INSERT INTO "plants" VALUES(34,'Acer glabrum',NULL,24,32,'Rocky Mountain Maple','Large vase shaped tree-shrubs up to 15 feet tall with handsom three lobed maple leaves up to 3 inches across. Fall color is bright yellow often blushing red. Attractive winged seed remain on the branches through most of the winter.','2015-03-11 01:13:09.338647','2015-03-12 23:54:25.820310','HY-CT(120-180)-CTD');
+INSERT INTO "plants" VALUES(34,'Acer glabrum',13,24,32,'Rocky Mountain Maple','Large vase shaped tree-shrubs up to 15 feet tall with handsom three lobed maple leaves up to 3 inches across. Fall color is bright yellow often blushing red. Attractive winged seed remain on the branches through most of the winter.','2015-03-11 01:13:09.338647','2015-03-15 11:11:07.776708','HY-CT(120-180)-CTD');
 INSERT INTO "plants" VALUES(35,'Acer grandidentatum',13,24,34,'Wasatch Maple','','2015-03-11 01:13:09.611922','2015-03-13 11:22:35.286064',NULL);
 INSERT INTO "plants" VALUES(36,'Achillea lanulosa',NULL,26,35,'Yarrow, Bone Set',' This drought tolerant perennial produces bone white flowers in early summer. With a height of about 24" tall and a spread of about 20" this plant works well in flowering boarders and dry-land landscapes.','2015-03-11 01:13:09.869454','2015-03-12 23:54:25.965371','DS-NC');
 INSERT INTO "plants" VALUES(37,'Aconitum columbianum (dormant)',NULL,27,36,'Native Monkshood',NULL,'2015-03-11 01:13:10.104958','2015-03-11 01:13:10.205041',NULL);
@@ -1086,6 +1086,7 @@ CREATE TABLE "production_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
 INSERT INTO "production_cards" VALUES(1,'SCP-00001',4,4,30,12,NULL,NULL,'t','t','2015-03-14 19:29:29.671860','2015-03-14 19:29:55.884876');
 CREATE TABLE "production_steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "production_card_id" integer, "step_date" date, "process" varchar, "description" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "production_steps" VALUES(1,1,'2015-03-11','DS-CTD','Sow the seed','In clay pots with cloth','2015-03-14 19:30:50.033726','2015-03-14 19:30:50.033726');
+INSERT INTO "production_steps" VALUES(2,1,'2015-03-14','Fish','Live Fish Fertilizer','Added 10 goldfish to the FishTank ','2015-03-15 11:13:05.278770','2015-03-15 11:13:05.278770');
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('seeds',61);
 INSERT INTO "sqlite_sequence" VALUES('genus',200);
@@ -1095,7 +1096,7 @@ INSERT INTO "sqlite_sequence" VALUES('families',13);
 INSERT INTO "sqlite_sequence" VALUES('locations',30);
 INSERT INTO "sqlite_sequence" VALUES('vendors',8);
 INSERT INTO "sqlite_sequence" VALUES('production_cards',1);
-INSERT INTO "sqlite_sequence" VALUES('production_steps',1);
+INSERT INTO "sqlite_sequence" VALUES('production_steps',2);
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 CREATE INDEX "index_plants_on_family_id" ON "plants" ("family_id");
 CREATE INDEX "index_plants_on_genus_id" ON "plants" ("genus_id");
