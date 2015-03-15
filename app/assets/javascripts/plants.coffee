@@ -4,7 +4,7 @@
 $ ->
 
   $('#plant_table').DataTable -> {
-    paging: true }
+    paging: true, }
 
   $('#plant_family_name').change ->
     theid = $('#fam_id').val()
