@@ -55,3 +55,13 @@
     </tbody>
   </table>
 </div>
+
+<div id="production_cards">
+  <table class="display">
+    <thead>
+      <th colspan="3"><%= "Production Cards for #{@plant.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "production_cards/cards", collection:@plant.production_cards %>
+    </tbody>
+  </table>
