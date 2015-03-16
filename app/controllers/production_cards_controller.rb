@@ -14,8 +14,12 @@ class ProductionCardsController < ApplicationController
   end
 
   # GET /production_cards/new
-  def new( params = {} )
-    @production_card = ProductionCard.new(params)
+  def new
+    if params[:plant]
+      @production_card = ProductionCard.new(plant: Plant.find(params[:plant]))
+    else
+      @production_card = ProductionCard.new
+    end
   end
 
   # GET /production_cards/1/edit
