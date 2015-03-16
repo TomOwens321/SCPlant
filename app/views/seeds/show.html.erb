@@ -53,4 +53,5 @@
 <%= link_to 'Edit', edit_seed_path(@seed) %> |
 <%= link_to 'Back', seeds_path %> | 
 <%= link_to 'New Seed', new_seed_path %> | 
+<%= link_to 'New P-Card', new_production_card_path(seed: @seed, plant: @seed.plant) %>
 

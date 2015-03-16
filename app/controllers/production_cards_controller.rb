@@ -17,6 +17,8 @@ class ProductionCardsController < ApplicationController
   def new
     if params[:plant]
       @production_card = ProductionCard.new(plant: Plant.find(params[:plant]))
+    elsif params[:seed]
+      @production_card = ProductionCard.new(plant: Plant.find(params[:plant]), seed: Seed.find(params[:seed]))
     else
       @production_card = ProductionCard.new
     end

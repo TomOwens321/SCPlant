@@ -15,6 +15,10 @@ class ProductionCard < ActiveRecord::Base
     self.plant.nil? ? "" : self.plant.name
   end
 
+  def seed_lot
+    self.seed.nil? ? "" : self.seed.lot
+  end
+
   def seed_lots
     self.plant.nil? ? [] : self.plant.seeds
   end
