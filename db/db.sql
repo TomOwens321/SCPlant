@@ -771,7 +771,7 @@ INSERT INTO "plants" VALUES(199,'Fendlera rupicola',NULL,103,183,'Cliff Fendlerb
 INSERT INTO "plants" VALUES(200,'Forestiera neomexicana',NULL,104,40,'New Mexican Privet',NULL,'2015-03-11 01:14:01.009100','2015-03-12 23:54:46.109002','CT(60-90)-CTD');
 INSERT INTO "plants" VALUES(201,'Fragaria virginiana var.glauca',NULL,105,3,'Wild Strawberry',NULL,'2015-03-11 01:14:01.299641','2015-03-11 01:14:01.457184',NULL);
 INSERT INTO "plants" VALUES(202,'Fragraria americana ''SangreFria''',NULL,106,14,'Sangre Fria Wild Strawberry',NULL,'2015-03-11 01:14:01.609788','2015-03-11 01:14:01.780519',NULL);
-INSERT INTO "plants" VALUES(203,'Frasera speciosa',NULL,107,80,'Giant Green Gentian',NULL,'2015-03-11 01:14:01.945134','2015-03-12 23:54:46.487722','CT(60-90)-CTD');
+INSERT INTO "plants" VALUES(203,'Frasera speciosa',NULL,107,80,'Giant Green Gentian, Jolly Green Giant','','2015-03-11 01:14:01.945134','2015-03-17 00:32:14.397962','CT(60-90)-CTD');
 INSERT INTO "plants" VALUES(204,'Fraxinus anomola',NULL,108,184,'Single-leaf Ash',NULL,'2015-03-11 01:14:02.224010','2015-03-12 23:54:46.309527','CT(60-120)-CTD');
 INSERT INTO "plants" VALUES(205,'Gaillardia aristata',NULL,109,185,'Native Blanket Flower',NULL,'2015-03-11 01:14:02.523374','2015-03-12 23:54:46.643854','DS-CTD');
 INSERT INTO "plants" VALUES(206,'Gaillardia pinnatifida',NULL,109,186,'Hopi Blanketflower',NULL,'2015-03-11 01:14:02.950383','2015-03-12 23:54:46.944902','DS-CTD');
@@ -1087,6 +1087,7 @@ INSERT INTO "production_cards" VALUES(1,'SCP-00001',4,4,30,12,NULL,NULL,'t','t',
 CREATE TABLE "production_steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "production_card_id" integer, "step_date" date, "process" varchar, "description" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "production_steps" VALUES(1,1,'2015-03-11','DS-CTD','Sow the seed','In clay pots with cloth','2015-03-14 19:30:50.033726','2015-03-14 19:30:50.033726');
 INSERT INTO "production_steps" VALUES(2,1,'2015-03-14','Fish','Live Fish Fertilizer','Added 10 goldfish to the FishTank ','2015-03-15 11:13:05.278770','2015-03-15 11:13:05.278770');
+INSERT INTO "production_steps" VALUES(3,1,'2015-03-17','Yay!','First germination','We found 2 brand new seedlings today. Yay!','2015-03-17 00:29:14.779338','2015-03-17 00:29:14.779338');
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('seeds',61);
 INSERT INTO "sqlite_sequence" VALUES('genus',200);
@@ -1096,7 +1097,7 @@ INSERT INTO "sqlite_sequence" VALUES('families',13);
 INSERT INTO "sqlite_sequence" VALUES('locations',30);
 INSERT INTO "sqlite_sequence" VALUES('vendors',8);
 INSERT INTO "sqlite_sequence" VALUES('production_cards',1);
-INSERT INTO "sqlite_sequence" VALUES('production_steps',2);
+INSERT INTO "sqlite_sequence" VALUES('production_steps',3);
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 CREATE INDEX "index_plants_on_family_id" ON "plants" ("family_id");
 CREATE INDEX "index_plants_on_genus_id" ON "plants" ("genus_id");
