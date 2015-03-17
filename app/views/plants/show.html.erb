@@ -40,6 +40,11 @@
   <%= @plant.seeds_on_hand %>
 </p>
 
+<p>
+  <strong>USDA LINK:</strong> 
+  <%= link_to @plant.name, @plant.usda_link, target: "_blank" %>
+</p>
+
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %> |
 <%= link_to 'Destroy', @plant, method: :delete, data: { confirm: 'Are you sure?' } %> |

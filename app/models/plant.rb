@@ -30,6 +30,11 @@ class Plant < ActiveRecord::Base
     self.seeds.sum(:remaining)
   end
 
+  def usda_link
+    symbol = (self.genus.name[0,2] + self.species.name[0,2]).upcase
+    link = "http://plants.usda.gov/core/profile?symbol=#{symbol}"
+  end
+
   private
 
   def set_other_params
