@@ -24,8 +24,8 @@
     <% @production_cards.each do |production_card| %>
       <tr>
         <td><%= production_card.card_number %></td>
-        <td><%= production_card.plant_name %></td>
-        <td><%= production_card.first_item_date %></td>
+        <td><%= link_to production_card.plant_name, production_card.plant %></td>
+        <td><%= link_to production_card.first_item_date, production_card.seed %></td>
         <td><%= production_card.seed_quantity %></td>
         <td><%= production_card.quantity_needed %></td>
         <td><%= production_card.quantity_produced %></td>
