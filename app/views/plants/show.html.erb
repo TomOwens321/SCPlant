@@ -7,17 +7,17 @@
 
 <p>
   <strong>Family:</strong>
-  <%= @plant.family_name %>
+  <%= link_to @plant.family_name, plant_family_path(@plant)  %>
 </p>
 
 <p>
   <strong>Genus:</strong>
-  <%= @plant.genus_name %>
+  <%= link_to @plant.genus_name, @plant.genus %>
 </p>
 
 <p>
   <strong>Species:</strong>
-  <%= @plant.species_name %>
+  <%= link_to @plant.species_name, @plant.species %>
 </p>
 
 <p>
