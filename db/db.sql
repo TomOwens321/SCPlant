@@ -1091,6 +1091,7 @@ INSERT INTO "production_steps" VALUES(1,1,'2015-03-11','DS-CTD','Sow the seed','
 INSERT INTO "production_steps" VALUES(2,1,'2015-03-14','Fish','Live Fish Fertilizer','Added 10 goldfish to the FishTank ','2015-03-15 11:13:05.278770','2015-03-15 11:13:05.278770');
 INSERT INTO "production_steps" VALUES(3,1,'2015-03-17','Yay!','First germination','We found 2 brand new seedlings today. Yay!','2015-03-17 00:29:14.779338','2015-03-17 00:29:14.779338');
 INSERT INTO "production_steps" VALUES(4,1,'2015-03-24','Yay!','More germination','Approximately 30 seedlings so far.','2015-03-24 12:32:48.435207','2015-03-24 12:32:48.435207');
+INSERT INTO "production_steps" VALUES(5,1,'2015-03-27','Yay!','More germination','Even the last pot has sprouted a few seedlings!','2015-03-27 18:01:52.853939','2015-03-27 18:01:52.853939');
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('seeds',61);
 INSERT INTO "sqlite_sequence" VALUES('genus',200);
@@ -1100,7 +1101,7 @@ INSERT INTO "sqlite_sequence" VALUES('families',15);
 INSERT INTO "sqlite_sequence" VALUES('locations',30);
 INSERT INTO "sqlite_sequence" VALUES('vendors',8);
 INSERT INTO "sqlite_sequence" VALUES('production_cards',1);
-INSERT INTO "sqlite_sequence" VALUES('production_steps',4);
+INSERT INTO "sqlite_sequence" VALUES('production_steps',5);
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
 CREATE INDEX "index_plants_on_family_id" ON "plants" ("family_id");
 CREATE INDEX "index_plants_on_genus_id" ON "plants" ("genus_id");
