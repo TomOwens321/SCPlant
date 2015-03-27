@@ -28,8 +28,9 @@ class ProductionStepsController < ApplicationController
 
     respond_to do |format|
       if @production_step.save
-        format.html { redirect_to @production_step, notice: 'Production step was successfully created.' }
-        format.json { redirect_to "#" }
+        format.html { redirect_to :back, notice: 'Production step was successfully created.' }
+        #format.json { render :show, status: :updated, location: @production_step }
+        format.json { render partial: "list" }
       else
         format.html { render :new }
         format.json { render json: @production_step.errors, status: :unprocessable_entity }

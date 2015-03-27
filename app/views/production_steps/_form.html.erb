@@ -1,4 +1,4 @@
-<%= form_for(@production_step, remote: true) do |f| %>
+<%= form_for(@production_step) do |f| %>
   <% if @production_step.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@production_step.errors.count, "error") %> prohibited this production_step from being saved:</h2>
