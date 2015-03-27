@@ -26,3 +26,11 @@ div.main_menu {
   margin-right: auto;
   width: 20em;
 }
+
+div.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+  padding: 5px;
+  background-color: #E0E0F0
+}
