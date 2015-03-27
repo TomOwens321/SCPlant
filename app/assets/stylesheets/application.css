@@ -32,5 +32,13 @@ div.center {
   margin-right: auto;
   width: 94%;
   padding: 5px;
+  box-shadow: 6px 6px 3px gray;
   background-color: #E0E0F0
+}
+
+table.subtable {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding: 5px
 }
