@@ -1,4 +1,4 @@
-<%= form_for(@production_step) do |f| %>
+<%= form_for(@production_step, remote: true) do |f| %>
   <% if @production_step.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@production_step.errors.count, "error") %> prohibited this production_step from being saved:</h2>
@@ -10,28 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :production_card_id %><br>
-    <%= f.text_field :production_card_id %>
-  </div>
-  <div class="field">
-    <%= f.label :step_date %><br>
-    <%= f.date_select :step_date %>
-  </div>
-  <div class="field">
-    <%= f.label :process %><br>
-    <%= f.text_field :process %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.hidden_field :production_card_id %>
+  <table id="new_prod_step">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Process</th>
+        <th>Description</th>
+        <th>Notes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.date_select :step_date %></td>
+        <td><%= f.text_field :process %></td>
+        <td><%= f.text_field :description %></td>
+        <td><%= f.text_field :notes %></td>
+        <td><%= f.submit %></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>

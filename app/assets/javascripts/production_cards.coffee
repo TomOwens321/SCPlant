@@ -6,5 +6,5 @@ $ ->
   $('#production_card_table').DataTable -> {
     paging: true }
   
-  $('#plnt_name').change ->
-    alert 'choose this plant?'
+  $(document).bind "ajaxSuccess", "form.new_production_step", (event, xhr, settings) ->
+    window.location.reload(true)
