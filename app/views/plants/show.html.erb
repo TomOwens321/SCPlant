@@ -51,6 +51,7 @@
 <%= link_to 'Get Seed', new_seed_path(plant: @plant) %> | 
 <%= link_to 'New P-Card', new_production_card_path(plant: @plant) %>
 
+<% if @plant.locations.size > 0 %>
 <div id="locations">
   <table class="display subtable">
     <thead>
@@ -61,7 +62,9 @@
     </tbody>
   </table>
 </div>
+<% end %>
 
+<% if @plant.production_cards.size > 0 %>
 <div id="production_cards">
   <table class="display subtable">
     <thead>
@@ -72,7 +75,9 @@
     </tbody>
   </table>
 </div>
+<% end %>
 
+<% if @plant.seeds.size > 0 %>
 <div id="seeds">
   <table class="display subtable">
     <thead>
@@ -83,3 +88,4 @@
     </tbody>
   </table>
 </div>
+<% end %>
