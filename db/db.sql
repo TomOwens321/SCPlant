@@ -26,6 +26,8 @@ INSERT INTO "families" VALUES(10,'Hydrangeaceae',NULL,NULL,'2015-03-08 16:36:09.
 INSERT INTO "families" VALUES(11,'Primulaceae ',NULL,NULL,'2015-03-08 22:45:18.464878','2015-03-08 22:45:18.464878');
 INSERT INTO "families" VALUES(12,' Apocynaceae ',NULL,NULL,'2015-03-12 16:08:31.710286','2015-03-12 16:08:31.710286');
 INSERT INTO "families" VALUES(13,'Aceraceae',NULL,NULL,'2015-03-13 11:22:25.850763','2015-03-13 11:22:25.850763');
+INSERT INTO "families" VALUES(14,'Papaveraceae',NULL,NULL,'2015-03-27 14:32:22.072574','2015-03-27 14:32:22.072574');
+INSERT INTO "families" VALUES(15,'Ranunculaceae',NULL,NULL,'2015-03-27 17:57:29.416678','2015-03-27 17:57:29.416678');
 CREATE TABLE "genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "common_name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "genus" VALUES(1,'Lygodesmia',NULL,NULL,'2015-03-08 16:35:50.387901','2015-03-08 16:35:50.387901');
 INSERT INTO "genus" VALUES(2,'Potentilla',NULL,NULL,'2015-03-08 16:35:51.282874','2015-03-08 16:35:51.282874');
@@ -642,7 +644,7 @@ INSERT INTO "plants" VALUES(70,'Arctostaphylos pungens',NULL,39,68,'Pointleaf Ma
 INSERT INTO "plants" VALUES(71,'Arctostaphylos uva-ursi',NULL,39,69,'Kinnikinnick, Bearberry','A creeping evergreen groundcover, handsom throughout the year,  works well in part shade and grows no taller than 5" and spreads to 4'' wide. White urn-shaped flower bloom in the early spring. In fall it is dotted with attractive red berries that hold through the winter and are a bird attractor. Faster than the others of this genus but still not easy.','2015-03-11 01:13:19.853446','2015-03-12 23:54:35.480511','WW(72)-CT(120-576)-CTD');
 INSERT INTO "plants" VALUES(72,'Arctostaphylos ''Zorra''',NULL,39,70,'''Zorra'' Manzanita',NULL,'2015-03-11 01:13:20.157176','2015-03-11 01:13:20.335987',NULL);
 INSERT INTO "plants" VALUES(73,'Arenaria hookeri',NULL,40,71,'Hooker''s Sandwort',NULL,'2015-03-11 01:13:20.478832','2015-03-11 01:13:20.625986',NULL);
-INSERT INTO "plants" VALUES(74,'Argemone polyanthemos',NULL,41,72,'Prickly Poppy','Icy-blue leaves 3" long with whitish veins are truly stunning on this dryland perennial. It does have very small prickly spines are on the edges of the leaves, on the stems and on the seed pods. Large, showy, white, poppy-like flowers up to 4" across with 1" bright orange centers on this long blooming native make a car stopper. It blooms in mid-summer and continues through the fall. The milky juice in the stem is bright orange. Hmmm.','2015-03-11 01:13:20.795563','2015-03-12 23:54:34.956645','HY-CT(60-120)-CTD');
+INSERT INTO "plants" VALUES(74,'Argemone polyanthemos',14,41,72,'Prickly Poppy','Icy-blue leaves 3" long with whitish veins are truly stunning on this dryland perennial. It does have very small prickly spines are on the edges of the leaves, on the stems and on the seed pods. Large, showy, white, poppy-like flowers up to 4" across with 1" bright orange centers on this long blooming native make a car stopper. It blooms in mid-summer and continues through the fall. The milky juice in the stem is bright orange. Hmmm.','2015-03-11 01:13:20.795563','2015-03-27 14:32:28.756135','HY-CT(60-120)-CTD');
 INSERT INTO "plants" VALUES(75,'Aristida purpurea',NULL,42,73,'Three Awn Grass','This cute ornamental grass is only 6" tall with very fine leaves giving it a soft appearance. It looks nice planted in groupings. Each plant is about 8" to 12" across. In the fall the leaves turn a blush of purple with wheat colored seed that have 3 long antenna-like structures for seed dispersal.','2015-03-11 01:13:21.147181','2015-03-12 23:54:35.101565','DS-CTD');
 INSERT INTO "plants" VALUES(76,'Arnica cordifolia',NULL,43,74,'Heartleaf Arnica','Bright orange-yellow flowers 2" across and up to 8" tall, thrive in part shade. The foliage is made up of basal, spade shaped, fuzzy leaves to 2" wide. Very showy and useful to brighten a shady north face.','2015-03-11 01:13:21.517923','2015-03-12 23:54:29.033531','DS-LC');
 INSERT INTO "plants" VALUES(77,'Artemisia cana',NULL,18,38,'Silver Sagebrush',NULL,'2015-03-11 01:13:21.827367','2015-03-11 01:13:21.975887',NULL);
@@ -705,7 +707,7 @@ INSERT INTO "plants" VALUES(133,'Chrysothamnus viscidiflorus',NULL,69,123,'Visci
 INSERT INTO "plants" VALUES(134,'Cimicifuga racemosa',NULL,70,124,'Black Snakeroot, Black Cohosh',NULL,'2015-03-11 01:13:40.097491','2015-03-12 23:54:41.457900','HY-CTD');
 INSERT INTO "plants" VALUES(135,'Claytonia megarhiza',NULL,71,125,'Alpine Spring-beauty',NULL,'2015-03-11 01:13:40.488416','2015-03-11 01:13:40.643111',NULL);
 INSERT INTO "plants" VALUES(136,'Clematis hirsutissima (non vining) note:slow growing',NULL,72,126,'Sugarbowls, Vase Flower, Granny''s Bonnet',NULL,'2015-03-11 01:13:40.816166','2015-03-12 23:54:41.613951','CT(90-120)-CTD');
-INSERT INTO "plants" VALUES(137,'Clematis ligusticifolia',NULL,72,127,'Western Virgin''s Bower, Pipestems, Traveler''s Joy',NULL,'2015-03-11 01:13:41.185696','2015-03-12 23:54:41.804298','CT(90-120)-CTD');
+INSERT INTO "plants" VALUES(137,'Clematis ligusticifolia',15,72,127,'Western Virgin''s Bower, Pipestems, Traveler''s Joy','','2015-03-11 01:13:41.185696','2015-03-27 17:57:32.343461','CT(90-120)-CTD');
 INSERT INTO "plants" VALUES(138,'Cleome lutea (annual)',NULL,73,128,'Golden Bee Plant',NULL,'2015-03-11 01:13:41.464011','2015-03-12 23:54:20.611397','HY-CT(60-120)-CTD');
 INSERT INTO "plants" VALUES(139,'Cleome serrulata (annual)',NULL,73,129,'Rocky Mountain Bee Plant, Stinking Clover',NULL,'2015-03-11 01:13:41.835665','2015-03-12 23:54:41.926964','HY-CT(90-120)-CTD');
 INSERT INTO "plants" VALUES(140,'Colutea aborescens',NULL,74,130,'Bladder Senna',NULL,'2015-03-11 01:13:42.088033','2015-03-12 23:54:20.755377','WW(72)-CT(60-90)-CTD');
@@ -1094,7 +1096,7 @@ INSERT INTO "sqlite_sequence" VALUES('seeds',61);
 INSERT INTO "sqlite_sequence" VALUES('genus',200);
 INSERT INTO "sqlite_sequence" VALUES('species',342);
 INSERT INTO "sqlite_sequence" VALUES('plants',418);
-INSERT INTO "sqlite_sequence" VALUES('families',13);
+INSERT INTO "sqlite_sequence" VALUES('families',15);
 INSERT INTO "sqlite_sequence" VALUES('locations',30);
 INSERT INTO "sqlite_sequence" VALUES('vendors',8);
 INSERT INTO "sqlite_sequence" VALUES('production_cards',1);
