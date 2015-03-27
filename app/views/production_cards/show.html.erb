@@ -49,6 +49,12 @@
         <td><%= f.check_box :active %></td>
       </tr>
       <tr>
+        <td></td>
+        <td></td>
+        <td><%= f.submit %></td>
+        <td></td>
+      </tr>
+      <tr>
         <th colspan="4">Production Steps</th>
       </tr>
       <tr>
@@ -57,13 +63,9 @@
         <th>Description</th>
         <th>Notes</th>
       </tr>
-      <%= render partial: "production_steps/list", collection: @steps %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td><%= f.submit %></td>
-        <td></td>
-      </tr>
+      <div id="steps">
+        <%= render partial: "production_steps/list", collection: @steps %>
+      </div>
     </tfoot>
   </table>
 <% end %>
