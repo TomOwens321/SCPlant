@@ -13,13 +13,13 @@
   <% end %>
 
 <%= form_for(@production_card) do |f| %>
-  <table class="display" id="prod_card">
+  <table class="display subtable" id="prod_card">
     <thead>
       <tr>
         <th colspan="4"><%= "Sun Chaser Production Card #{@production_card.card_number}" %></th>
       </tr>
       <tr>
-        <th colspan="4"><%= @production_card.plant_name %></th>
+        <th colspan="4"><h2><%= link_to @production_card.plant_name, plant_path(@production_card.plant) %></h2></th>
       </tr>
       <tr>
         <th>Code:</th>
@@ -41,8 +41,6 @@
         <td><%= f.label :quantity_produced %></td>
         <td><%= f.number_field :quantity_produced %></td>
       </tr>
-    </tbody>
-    <tfoot>
       <tr>
         <td>Removed from Seed:</td>
         <td><%= @production_card.seed_decremented %></td>
@@ -55,19 +53,26 @@
         <td><%= f.submit %></td>
         <td></td>
       </tr>
-      <tr>
-        <th colspan="4">Production Steps</th>
-      </tr>
-      <tr>
-        <th>Date</th>
-        <th>Process</th>
-        <th>Description</th>
-        <th>Notes</th>
-      </tr>
-      <div id="steps">
-        <%= render partial: "production_steps/list", collection: @steps %>
-      </div>
-    </tfoot>
+    </tbody>
+  </table>
+  <table class="display subtable" id="prod_steps">
+    <thead>
+    <tr>
+      <th colspan="6"><h2>Production Steps</h2></th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Process</th>
+      <th>Description</th>
+      <th>Notes</th>
+      <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div id="steps">
+      <%= render partial: "production_steps/list", collection: @steps %>
+    </div>
+    </tbody>
   </table>
 <% end %>
 

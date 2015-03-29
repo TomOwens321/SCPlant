@@ -6,7 +6,7 @@ class ProductionCard < ActiveRecord::Base
   belongs_to :seed
   belongs_to :order
 
-  has_many   :production_steps
+  has_many   :production_steps, dependent: :destroy
 
   after_initialize :defaults
   before_save       :decrement_seed
