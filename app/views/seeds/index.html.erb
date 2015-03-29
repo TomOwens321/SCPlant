@@ -10,13 +10,8 @@
       <th>Collection date</th>
       <th>Vendor</th>
       <th>Location</th>
-      <th>Collected by</th>
-      <th>Clean</th>
       <th>Quantity</th>
       <th>Remaining</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -24,18 +19,13 @@
   <tbody>
     <% @seeds.each do |seed| %>
       <tr>
-        <td><%= seed.lot %></td>
+        <td><%= link_to seed.lot, edit_seed_path(seed) %></td>
         <td><%= link_to seed.plant_name, seed.plant %></td>
         <td><%= seed.collection_date %></td>
         <td><%= link_to seed.vendor_name, seed.vendor %></td>
         <td><%= link_to seed.location_name, seed.location %></td>
-        <td><%= seed.collected_by %></td>
-        <td><%= seed.clean %></td>
         <td><%= seed.quantity %></td>
         <td><%= seed.remaining %></td>
-        <td><%= seed.notes %></td>
-        <td><%= link_to 'Show', seed %></td>
-        <td><%= link_to 'Edit', edit_seed_path(seed) %></td>
         <td><%= link_to 'Destroy', seed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

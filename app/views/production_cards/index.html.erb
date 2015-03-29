@@ -7,14 +7,10 @@
     <tr>
       <th>Card number</th>
       <th>Plant</th>
+      <th>Seed Lot</th>
       <th>Seed Start Date</th>
-      <th>Seed quantity</th>
-      <th>Quantity needed</th>
-      <th>Quantity produced</th>
       <th>Order</th>
-      <th>Seed decremented</th>
       <th>Active</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -25,14 +21,10 @@
       <tr>
         <td><%= link_to production_card.card_number, production_card_path(production_card) %></td>
         <td><%= link_to production_card.plant_name, production_card.plant %></td>
+        <td><%= link_to production_card.seed_lot, seed_path(production_card.seed) %></td>
         <td><%= link_to production_card.first_item_date, production_card.seed %></td>
-        <td><%= production_card.seed_quantity %></td>
-        <td><%= production_card.quantity_needed %></td>
-        <td><%= production_card.quantity_produced %></td>
         <td><%= production_card.order %></td>
-        <td><%= production_card.seed_decremented %></td>
         <td><%= production_card.active %></td>
-        <td><%= link_to 'Show', production_card %></td>
         <td><%= link_to 'Edit', edit_production_card_path(production_card) %></td>
         <td><%= link_to 'Destroy', production_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -17,7 +17,7 @@
   <tbody>
     <% @production_steps.each do |production_step| %>
       <tr>
-        <td><%= production_step.production_card %></td>
+        <td><%= link_to production_step.production_card.card_number, production_card_path(production_step.production_card) %></td>
         <td><%= production_step.step_date %></td>
         <td><%= production_step.process %></td>
         <td><%= production_step.description %></td>
