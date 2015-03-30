@@ -238,6 +238,7 @@ INSERT INTO "genus" VALUES(204,'Origanum',NULL,NULL,'2015-03-29 17:39:17.317370'
 INSERT INTO "genus" VALUES(205,'Solanum',NULL,NULL,'2015-03-29 17:45:26.954989','2015-03-29 17:45:26.954989');
 INSERT INTO "genus" VALUES(206,'Capsicum',NULL,NULL,'2015-03-29 17:53:44.178889','2015-03-29 17:53:44.178889');
 INSERT INTO "genus" VALUES(207,'Schizachyrium',NULL,NULL,'2015-03-29 18:08:46.145563','2015-03-29 18:08:46.145563');
+INSERT INTO "genus" VALUES(208,'Eleagnus',NULL,NULL,'2015-03-30 13:55:47.187342','2015-03-30 13:55:47.187342');
 CREATE TABLE "species" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "common_name" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "species" VALUES(1,'juncea',NULL,NULL,'2015-03-08 16:35:50.397153','2015-03-08 16:35:50.397153');
 INSERT INTO "species" VALUES(2,'pensylvanica',NULL,NULL,'2015-03-08 16:35:51.287719','2015-03-08 16:35:51.287719');
@@ -1013,6 +1014,7 @@ INSERT INTO "plants" VALUES(424,'Origanum vulgare hirtum',NULL,204,347,'Oregano'
 INSERT INTO "plants" VALUES(425,'Solanum lycopersicum',NULL,205,348,'Tomato','Tomatoe or Tomato','2015-03-29 17:45:26.959487','2015-03-29 17:47:40.134907','DS-CTD');
 INSERT INTO "plants" VALUES(426,'Capsicum annuum',17,206,349,'Bell Pepper','','2015-03-29 17:53:44.182775','2015-03-29 17:56:03.136793','DS-CTD');
 INSERT INTO "plants" VALUES(427,'Schizachyrium scoparium ''Blaze''',6,207,350,'Little Bluestem','Grass with pretty red fall color.','2015-03-29 18:08:46.148809','2015-03-29 18:08:46.148809','DS-CTD');
+INSERT INTO "plants" VALUES(428,'Eleagnus commutata',NULL,208,150,NULL,NULL,'2015-03-30 13:55:47.190992','2015-03-30 13:55:47.190992',NULL);
 CREATE TABLE "seeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lot" varchar, "plant_id" integer, "collection_date" date, "vendor_id" integer, "location_id" integer, "collected_by" varchar, "clean" boolean, "quantity" integer, "remaining" integer, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "seeds" VALUES(1,'SCS-0001',1,'2001-12-28',NULL,1,'Renae Betsy','t',100,50,'','2015-03-08 16:35:50.123619','2015-03-29 17:58:42.657627');
 INSERT INTO "seeds" VALUES(2,'SCS-0002',2,'2006-08-09',NULL,2,'Renae Betsy','f',150,150,NULL,'2015-03-08 16:35:51.125087','2015-03-08 16:35:51.939316');
@@ -1087,6 +1089,9 @@ INSERT INTO "seeds" VALUES(73,'SCS-0073',425,'2014-03-28',12,NULL,'23','t',35,10
 Heirloom Tomato Marglobe','2015-03-29 17:50:24.681527','2015-03-29 20:40:48.956802');
 INSERT INTO "seeds" VALUES(74,'SCS-0074',426,'2011-06-18',NULL,1,'Betsy','t',100,84,'Taken from a grocery store orange bell pepper.','2015-03-29 17:55:01.099668','2015-03-29 23:31:00.008826');
 INSERT INTO "seeds" VALUES(75,'SCS-0075',427,'1996-08-05',6,NULL,'2080','t',2000,1950,'Blaze','2015-03-29 18:10:11.199725','2015-03-29 18:10:32.626370');
+INSERT INTO "seeds" VALUES(76,'SCS-0076',428,'2008-11-01',5,31,'k628','t',400,400,'old card 10496/','2015-03-30 13:58:27.524572','2015-03-30 13:58:27.524572');
+INSERT INTO "seeds" VALUES(77,'SCS-0077',204,'1997-09-09',NULL,32,'Betsy /Tom','t',100,100,'','2015-03-30 14:13:16.157056','2015-03-30 14:13:16.157056');
+INSERT INTO "seeds" VALUES(78,'SCS-0078',167,'2008-11-01',2,NULL,'1096','t',500,500,'','2015-03-30 14:14:53.699746','2015-03-30 14:14:53.699746');
 CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "contact" varchar, "address1" varchar, "address2" varchar, "city" varchar, "state" varchar, "zipcode" varchar, "phone" varchar, "email" varchar, "website" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "vendors" VALUES(1,'Granite',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-08 16:35:55.724509','2015-03-08 16:35:55.724509');
 INSERT INTO "vendors" VALUES(2,'WNS',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-08 16:35:57.520491','2015-03-08 16:35:57.520491');
@@ -1130,6 +1135,8 @@ INSERT INTO "locations" VALUES(27,'014D',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 INSERT INTO "locations" VALUES(28,'Penock Peak Rd',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-13 02:36:47.273820','2015-03-13 02:36:47.273820');
 INSERT INTO "locations" VALUES(29,'Mount Zion',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-13 02:45:37.057659','2015-03-13 02:45:37.057659');
 INSERT INTO "locations" VALUES(30,'Olie''s Garden',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-13 03:02:30.935635','2015-03-13 03:02:30.935635');
+INSERT INTO "locations" VALUES(31,'265E',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-30 13:57:13.181171','2015-03-30 13:57:13.181171');
+INSERT INTO "locations" VALUES(32,'John Brown Canyon',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2015-03-30 14:12:56.236359','2015-03-30 14:12:56.236359');
 CREATE TABLE "production_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "card_number" varchar, "plant_id" integer, "seed_id" integer, "seed_quantity" integer, "quantity_needed" integer, "quantity_produced" integer, "order_id" integer, "seed_decremented" boolean, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "production_cards" VALUES(1,'SCP-00001',4,4,30,12,NULL,NULL,'t','t','2015-03-14 19:29:29.671860','2015-03-29 23:52:54.402882');
 INSERT INTO "production_cards" VALUES(2,'SCP-00002',419,62,3,3,NULL,NULL,'t','t','2015-03-28 02:00:00.200020','2015-03-28 02:01:19.056912');
@@ -1167,12 +1174,12 @@ INSERT INTO "production_steps" VALUES(17,15,'2015-03-29','DS-CTD','2 FF Bur 2 Co
 INSERT INTO "production_steps" VALUES(18,16,'2015-03-29','DS-CTD','2 FF Bur 2 Coco','','2015-03-29 23:30:16.645165','2015-03-29 23:30:16.645165');
 INSERT INTO "production_steps" VALUES(19,17,'2015-03-29','DS-CTD','2 Lg Bur 1 Sm Bur 4 TB','','2015-03-29 23:31:28.639239','2015-03-29 23:31:28.639239');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('seeds',75);
-INSERT INTO "sqlite_sequence" VALUES('genus',207);
+INSERT INTO "sqlite_sequence" VALUES('seeds',78);
+INSERT INTO "sqlite_sequence" VALUES('genus',208);
 INSERT INTO "sqlite_sequence" VALUES('species',350);
-INSERT INTO "sqlite_sequence" VALUES('plants',427);
+INSERT INTO "sqlite_sequence" VALUES('plants',428);
 INSERT INTO "sqlite_sequence" VALUES('families',17);
-INSERT INTO "sqlite_sequence" VALUES('locations',30);
+INSERT INTO "sqlite_sequence" VALUES('locations',32);
 INSERT INTO "sqlite_sequence" VALUES('vendors',12);
 INSERT INTO "sqlite_sequence" VALUES('production_cards',17);
 INSERT INTO "sqlite_sequence" VALUES('production_steps',19);
