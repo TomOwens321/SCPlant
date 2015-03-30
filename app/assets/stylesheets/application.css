@@ -15,10 +15,15 @@
  *= require_self
  */
 
+body {
+  background-color: #AC8D4A
+}
+
 img.centered_image {
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  box-shadow: 6px 6px 3px black;
 }
 
 div.main_menu {
@@ -27,13 +32,18 @@ div.main_menu {
   width: 30%
 }
 
+div.main_menu a {
+  color: #503B0E;
+}
+
 div.center {
   margin-left: auto;
   margin-right: auto;
   width: 94%;
-  padding: 5px;
-  box-shadow: 6px 6px 3px gray;
-  background-color: #E0E0F0
+  padding: 10px;
+  box-shadow: 6px 6px 3px #0A0A0A;
+  background-color: #EDDDBC;
+  border: 2px solid black
 }
 
 div.no_border {

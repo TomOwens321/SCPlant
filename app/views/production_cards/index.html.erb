@@ -20,7 +20,7 @@
     <% @production_cards.each do |production_card| %>
       <tr>
         <td><%= link_to production_card.card_number, production_card_path(production_card) %></td>
-        <td><%= link_to production_card.plant_name, production_card.plant %></td>
+        <td><%= link_to production_card.plant.long_name, production_card.plant %></td>
         <td><%= link_to production_card.seed_lot, seed_path(production_card.seed) %></td>
         <td><%= link_to production_card.first_item_date, production_card.seed %></td>
         <td><%= production_card.order %></td>

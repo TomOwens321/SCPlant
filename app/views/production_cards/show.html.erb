@@ -19,7 +19,7 @@
         <th colspan="4"><%= "Sun Chaser Production Card #{@production_card.card_number}" %></th>
       </tr>
       <tr>
-        <th colspan="4"><h2><%= link_to @production_card.plant_name, plant_path(@production_card.plant) %></h2></th>
+        <th colspan="4"><h2><%= link_to @production_card.plant.long_name, plant_path(@production_card.plant) %></h2></th>
       </tr>
       <tr>
         <th>Code:</th>
