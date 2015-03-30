@@ -16,10 +16,12 @@ class PlantsController < ApplicationController
   # GET /plants/new
   def new
     @plant = Plant.new
+    @show_selectors = false
   end
 
   # GET /plants/1/edit
   def edit
+    @show_selectors = true
   end
 
   # POST /plants

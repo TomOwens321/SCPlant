@@ -14,6 +14,10 @@ class Plant < ActiveRecord::Base
   belongs_to :genus
   belongs_to :species
 
+  def long_name
+    "#{self.name} | #{self.common_name}"
+  end
+
   def family_name
     self.family.nil? ? "" : self.family.name
   end

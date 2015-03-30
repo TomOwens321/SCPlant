@@ -2,7 +2,7 @@
 
 <p>
   <strong>Production card:</strong>
-  <%= @production_step.production_card %>
+  <%= link_to @production_step.production_card.card_number, production_card_path(@production_step.production_card) %>
 </p>
 
 <p>
