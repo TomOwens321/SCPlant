@@ -1,0 +1,49 @@
+<%= form_for(@plant) do |f| %>
+  <% if @plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+
+      <ul>
+      <% @plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :family_id %><br>
+    <%= f.autocomplete_field :family_name, autocomplete_family_name_families_path,
+                              id_element: '#fam_id' %>
+    <%= f.hidden_field :family_id, id: "fam_id" %>
+  </div>
+  <% if @show_selectors == true %>
+  <div class="field">
+    <%= f.label :genus_id %><br>
+    <%= f.collection_select :genus_id, Genus.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :species_id %><br>
+    <%= f.collection_select :species_id, Species.all, :id, :name, prompt: true %>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :common_name %><br>
+    <%= f.text_field :common_name %>
+  </div>
+  <div class="field">
+    <%= f.label :germination_code %><br>
+    <%= f.text_field :germination_code %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

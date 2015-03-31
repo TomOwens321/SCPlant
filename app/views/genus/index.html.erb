@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Genus</h1>
+
+<table id="genus_table" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Common name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genus.each do |genus| %>
+      <tr>
+        <td><%= genus.name %></td>
+        <td><%= genus.common_name %></td>
+        <td><%= genus.description %></td>
+        <td><%= link_to 'Show', genus %></td>
+        <td><%= link_to 'Edit', edit_genus_path(genus) %></td>
+        <td><%= link_to 'Destroy', genus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genus', new_genus_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Production card:</strong>
+  <%= link_to @production_step.production_card.card_number, production_card_path(@production_step.production_card) %>
+</p>
+
+<p>
+  <strong>Step date:</strong>
+  <%= @production_step.step_date %>
+</p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @production_step.process %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @production_step.description %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @production_step.notes %>
+</p>
+
+<%= link_to 'Edit', edit_production_step_path(@production_step) %> |
+<%= link_to 'Back', production_steps_path %>

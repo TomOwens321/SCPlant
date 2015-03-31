@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Location <%= @location.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @location.area %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @location.city %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @location.county %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @location.state %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Altitude:</strong>
+  <%= @location.altitude %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @location.notes %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
+
+<div id="plants">
+  <table class="display subtable">
+    <thead>
+      <th colspan="5"><%= "Plants found at #{@location.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @location.plants.uniq %>
+    </tbody>
+  </table>
+</div>

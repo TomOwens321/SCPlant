@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  resources :production_steps
+
+  resources :production_cards
+
+  resources :locations do
+    get :autocomplete_location_name, on: :collection
+  end
+
+  resources :vendors do
+    get :autocomplete_vendor_name, on: :collection
+  end
+
+  resources :seeds
+
+  resources :plants do
+    get :autocomplete_plant_name, on: :collection
+  end
+
+  resources :common_names
+
+  resources :species
+
+  resources :genus
+
+  resources :families do
+    get :autocomplete_family_name, on: :collection
+  end
+
+  resources :thermometers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

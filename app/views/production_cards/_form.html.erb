@@ -1,0 +1,27 @@
+<%= form_for(@production_card) do |f| %>
+  <% if @production_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production_card.errors.count, "error") %> prohibited this production_card from being saved:</h2>
+
+      <ul>
+      <% @production_card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :card_number %><br>
+    <%= f.text_field :card_number %>
+  </div>
+  <div class="field">
+    <%= f.label :plant_id %><br>
+    <%= f.autocomplete_field :plant_name, autocomplete_plant_name_plants_path,
+                              id_element: '#plant_id', :update_elements => {} %>
+    <%= f.hidden_field :plant_id, id: "plant_id" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

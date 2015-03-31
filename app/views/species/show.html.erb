@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Species <%= @species.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @species.name %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @species.common_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @species.description %>
+</p>
+
+<%= link_to 'Edit', edit_species_path(@species) %> |
+<%= link_to 'Back', species_index_path %>
+
+<div id="plants">
+  <table class="display subtable">
+    <thead>
+      <th colspan="5"><%= "Plants with Species #{@species.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @species.plants.uniq %>
+    </tbody>
+  </table>
+</div>

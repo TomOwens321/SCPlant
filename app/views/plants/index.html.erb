@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Plants</h1>
+
+<table id="plant_table" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Family</th>
+      <th>Genus</th>
+      <th>Species</th>
+      <th>Common name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "plants/plant", collection: @plants %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plant', new_plant_path %>

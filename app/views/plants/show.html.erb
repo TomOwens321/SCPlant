@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Plant <%= @plant.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @plant.name %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= link_to @plant.family_name, plant_family_path(@plant)  %>
+</p>
+
+<p>
+  <strong>Genus:</strong>
+  <%= link_to @plant.genus_name, @plant.genus %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= link_to @plant.species_name, @plant.species %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @plant.common_name %>
+</p>
+
+<p>
+  <strong>Germination Code:</strong>
+  <%= @plant.germination_code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @plant.description %>
+</p>
+
+<p>
+  <strong>Seeds On Hand:</strong>
+  <%= @plant.seeds_on_hand %>
+</p>
+
+<p>
+  <strong>USDA LINK:</strong> 
+  <%= link_to @plant.name, @plant.usda_link, target: "_blank" %>
+</p>
+
+<%= link_to 'Edit', edit_plant_path(@plant) %> |
+<%= link_to 'Back', plants_path %> |
+<%= link_to 'Destroy', @plant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Get Seed', new_seed_path(plant: @plant) %> | 
+<%= link_to 'New P-Card', new_production_card_path(plant: @plant) %>
+
+<% if @plant.locations.size > 0 %>
+<div id="locations">
+  <table class="display subtable">
+    <thead>
+      <th colspan="4"><h2><%= "Places to find #{@plant.name} in the wild" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "locations/location", collection: @plant.locations.uniq %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+
+<% if @plant.production_cards.size > 0 %>
+<div id="production_cards">
+  <table class="display subtable">
+    <thead>
+      <th colspan="3"><h2><%= "Production Cards for #{@plant.name}" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "production_cards/cards", collection:@plant.production_cards %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+
+<% if @plant.seeds.size > 0 %>
+<div id="seeds">
+  <table class="display subtable">
+    <thead>
+      <th colspan="3"><h2><%= "Seed Lots for #{@plant.name}" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "seeds/seeds", collection:@plant.seeds %>
+    </tbody>
+  </table>
+</div>
+<% end %>

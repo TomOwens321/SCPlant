@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Showing Family <%= @family.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @family.name %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @family.common_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @family.description %>
+</p>
+
+<%= link_to 'Edit', edit_family_path(@family) %> |
+<%= link_to 'Back', families_path %>
+
+<div id="plants">
+  <table class="display subtable">
+    <thead>
+      <th colspan="5"><%= "Plants in #{@family.name} family" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @family.plants.uniq %>
+    </tbody>
+  </table>
+</div>

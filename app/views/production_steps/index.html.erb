@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Production Steps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Production card</th>
+      <th>Step date</th>
+      <th>Process</th>
+      <th>Description</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @production_steps.each do |production_step| %>
+      <tr>
+        <td><%= link_to production_step.production_card.card_number, production_card_path(production_step.production_card) %></td>
+        <td><%= production_step.step_date %></td>
+        <td><%= production_step.process %></td>
+        <td><%= production_step.description %></td>
+        <td><%= production_step.notes %></td>
+        <td><%= link_to 'Show', production_step %></td>
+        <td><%= link_to 'Edit', edit_production_step_path(production_step) %></td>
+        <td><%= link_to 'Destroy', production_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Production step', new_production_step_path %>

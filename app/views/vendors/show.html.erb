@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Vendor <%= @vendor.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @vendor.name %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @vendor.contact %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @vendor.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @vendor.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @vendor.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @vendor.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @vendor.zipcode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @vendor.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @vendor.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @vendor.website %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @vendor.notes %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+<%= link_to 'Back', vendors_path %>
+
+<div id="plants">
+  <table class="display subtable">
+    <thead>
+      <th colspan="5"><%= "Plants from #{@vendor.name}" %></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection: @vendor.plants.uniq %>
+    </tbody>
+  </table>
+</div>

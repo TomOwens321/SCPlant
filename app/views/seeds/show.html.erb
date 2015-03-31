@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Seed Lot <%= @seed.lot %></h1>
+<p>
+  <strong>Lot:</strong>
+  <%= @seed.lot %>
+</p>
+
+<p>
+  <strong>Plant:</strong>
+  <%= link_to @seed.plant.name, @seed.plant %>
+</p>
+
+<p>
+  <strong>Collection date:</strong>
+  <%= @seed.collection_date %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @seed.vendor_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @seed.location_name %>
+</p>
+
+<p>
+  <strong>Collected by/Vendor Lot:</strong>
+  <%= @seed.collected_by %>
+</p>
+
+<p>
+  <strong>Clean:</strong>
+  <%= @seed.clean %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @seed.quantity %>
+</p>
+
+<p>
+  <strong>Remaining:</strong>
+  <%= @seed.remaining %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @seed.notes %>
+</p>
+
+<%= link_to 'Edit', edit_seed_path(@seed) %> |
+<%= link_to 'Back', seeds_path %> | 
+<%= link_to 'New Seed', new_seed_path %> | 
+<%= link_to 'New P-Card', new_production_card_path(seed: @seed, plant: @seed.plant) %>
+
+<% if @seed.production_cards.size > 0 %>
+<div id="production_cards">
+  <table class="display subtable">
+    <thead>
+      <th colspan="3"><h2><%= "Production Cards for #{@seed.lot}" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "production_cards/cards", collection:@seed.production_cards %>
+    </tbody>
+  </table>
+</div>
+<% end %>
