@@ -20,7 +20,7 @@
     <% @seeds.each do |seed| %>
       <tr>
         <td><%= link_to seed.lot, edit_seed_path(seed) %></td>
-        <td><%= link_to seed.plant_name, seed.plant %></td>
+        <td><%= link_to seed.plant.long_name, seed.plant %></td>
         <td><%= seed.collection_date %></td>
         <td><%= link_to seed.vendor_name, seed.vendor %></td>
         <td><%= link_to seed.location_name, seed.location %></td>
