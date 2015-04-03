@@ -82,4 +82,8 @@
 </p>
 <%= link_to 'Edit', edit_production_card_path(@production_card) %> |
 <%= link_to 'Back', production_cards_path %>
+<div class="right">
+  <%= link_to 'Prev', production_card_path(@production_card.previous) %> | 
+  <%= link_to 'Next', production_card_path(@production_card.next) %>
+</div>
 </div>
