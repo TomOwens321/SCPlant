@@ -3,12 +3,14 @@ class Vendor < ActiveRecord::Base
   has_many :seeds
   has_many :plants, through: :seeds
 
+  default_scope { order('name ASC') }
+
   def previous
-   Vendor.where( "id < ?", self.id ).last ||Vendor.last
+   Vendor.where( "name < ?", self.name ).last ||Vendor.last
   end
 
   def next
-   Vendor.where( "id > ?", self.id ).first ||Vendor.first
+   Vendor.where( "name > ?", self.name ).first ||Vendor.first
   end
 
 end

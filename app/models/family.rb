@@ -1,13 +1,15 @@
 class Family < ActiveRecord::Base
   validates :name, presence: true
   has_many :plants
-
+  
+  default_scope { order('name ASC') }
+  
   def previous
-   Family.where( "id < ?", self.id ).last ||Family.last
+   Family.where( "name < ?", self.name ).last ||Family.last
   end
 
   def next
-   Family.where( "id > ?", self.id ).first ||Family.first
+   Family.where( "name > ?", self.name ).first ||Family.first
   end
 
 end

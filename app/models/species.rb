@@ -2,12 +2,14 @@ class Species < ActiveRecord::Base
   validates :name, length: { minimum: 3 }
   has_many :plants
 
+  default_scope { order('name ASC') }
+
   def previous
-   Species.where( "id < ?", self.id ).last ||Species.last
+   Species.where( "name < ?", self.name ).last ||Species.last
   end
 
   def next
-   Species.where( "id > ?", self.id ).first ||Species.first
+   Species.where( "name > ?", self.name ).first ||Species.first
   end
 
 end

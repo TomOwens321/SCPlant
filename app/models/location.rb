@@ -3,12 +3,14 @@ class Location < ActiveRecord::Base
   has_many :seeds
   has_many :plants, through: :seeds
 
+  default_scope { order('name ASC') }
+  
   def previous
-   Location.where( "id < ?", self.id ).last ||Location.last
+   Location.where( "name < ?", self.name ).last ||Location.last
   end
 
   def next
-   Location.where( "id > ?", self.id ).first ||Location.first
+   Location.where( "name > ?", self.name ).first ||Location.first
   end
 
 end

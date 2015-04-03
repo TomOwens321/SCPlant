@@ -14,6 +14,8 @@ class Plant < ActiveRecord::Base
   belongs_to :genus
   belongs_to :species
 
+  default_scope { order('name ASC') }
+
   def long_name
     "#{self.name} | #{self.common_name}"
   end
@@ -35,11 +37,11 @@ class Plant < ActiveRecord::Base
   end
 
   def previous
-    Plant.where( "id < ?", self.id ).last || Plant.last
+    Plant.where( "name < ?", self.name ).last || Plant.last
   end
 
   def next
-    Plant.where( "id > ?", self.id ).first || Plant.first
+    Plant.where( "name > ?", self.name ).first || Plant.first
   end
 
   def usda_link
