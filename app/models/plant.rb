@@ -34,6 +34,14 @@ class Plant < ActiveRecord::Base
     self.seeds.sum(:remaining)
   end
 
+  def previous
+    Plant.where( "id < ?", self.id ).last || Plant.last
+  end
+
+  def next
+    Plant.where( "id > ?", self.id ).first || Plant.first
+  end
+
   def usda_link
     symbol = (self.genus.name + "+" + self.species.name)
     link = "http://plants.usda.gov/java/nameSearch?keywordquery=#{symbol}&mode=sciname"

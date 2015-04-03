@@ -54,6 +54,10 @@
 <%= link_to 'Back', seeds_path %> | 
 <%= link_to 'New Seed', new_seed_path %> | 
 <%= link_to 'New P-Card', new_production_card_path(seed: @seed, plant: @seed.plant) %>
+<div class="right">
+  <%= link_to 'Prev', seed_path(@seed.previous) %> | 
+  <%= link_to 'Next', seed_path(@seed.next) %>
+</div>
 
 <% if @seed.production_cards.size > 0 %>
 <div id="production_cards">

@@ -17,6 +17,10 @@
 
 <%= link_to 'Edit', edit_species_path(@species) %> |
 <%= link_to 'Back', species_index_path %>
+<div class="right">
+  <%= link_to 'Prev', species_path(@species.previous) %> | 
+  <%= link_to 'Next', species_path(@species.next) %>
+</div>
 
 <div id="plants">
   <table class="display subtable">

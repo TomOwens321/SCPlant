@@ -47,6 +47,10 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+<div class="right">
+  <%= link_to 'Prev', location_path(@location.previous) %> | 
+  <%= link_to 'Next', location_path(@location.next) %>
+</div>
 
 <div id="plants">
   <table class="display subtable">

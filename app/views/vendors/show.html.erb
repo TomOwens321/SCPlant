@@ -57,6 +57,10 @@
 
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>
+<div class="right">
+  <%= link_to 'Prev', vendor_path(@vendor.previous) %> | 
+  <%= link_to 'Next', vendor_path(@vendor.next) %>
+</div>
 
 <div id="plants">
   <table class="display subtable">

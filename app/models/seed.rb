@@ -25,6 +25,14 @@ class Seed < ActiveRecord::Base
     self.lot + " " + self.plant_name + " : " + self.remaining.to_s
   end
 
+  def previous
+   Seed.where( "id < ?", self.id ).last ||Seed.last
+  end
+
+  def next
+   Seed.where( "id > ?", self.id ).first ||Seed.first
+  end
+
   def defaults
     myID = Seed.maximum(:id).nil? ? 1 : Seed.maximum(:id) + 1
     self.lot ||= "SCS-%04d" % myID

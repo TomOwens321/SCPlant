@@ -18,6 +18,10 @@
 
 <%= link_to 'Edit', edit_family_path(@family) %> |
 <%= link_to 'Back', families_path %>
+<div class="right">
+  <%= link_to 'Prev', family_path(@family.previous) %> | 
+  <%= link_to 'Next', family_path(@family.next) %>
+</div>
 
 <div id="plants">
   <table class="display subtable">

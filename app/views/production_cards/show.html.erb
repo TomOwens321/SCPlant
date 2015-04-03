@@ -30,7 +30,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= f.label :seed_id %></td>
+        <td><%= link_to 'Seed', @production_card.seed %></td>
         <td><%= f.collection_select :seed_id, Seed.where(plant: @production_card.plant), :id, :lot_name, prompt: "Select a seed lot." %></td>
         <td><%= f.label :seed_quantity %></td>
         <td><%= f.number_field :seed_quantity %></td>

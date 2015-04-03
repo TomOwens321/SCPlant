@@ -17,6 +17,10 @@
 
 <%= link_to 'Edit', edit_genus_path(@genus) %> |
 <%= link_to 'Back', genus_index_path %>
+<div class="right">
+  <%= link_to 'Prev', genus_path(@genus.previous) %> | 
+  <%= link_to 'Next', genus_path(@genus.next) %>
+</div>
 
 <div id="plants">
   <table class="display subtable">

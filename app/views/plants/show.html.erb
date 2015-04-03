@@ -50,6 +50,10 @@
 <%= link_to 'Destroy', @plant, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Get Seed', new_seed_path(plant: @plant) %> | 
 <%= link_to 'New P-Card', new_production_card_path(plant: @plant) %>
+<div class="right">
+  <%= link_to 'Prev', plant_path(@plant.previous) %> | 
+  <%= link_to 'Next', plant_path(@plant.next) %>
+</div>
 
 <% if @plant.locations.size > 0 %>
 <div id="locations">
