@@ -53,6 +53,10 @@ div.no_border {
   padding: 5px;
 }
 
+div.right {
+  float: right;
+}
+
 table.subtable {
   margin-left: auto;
   margin-right: auto;

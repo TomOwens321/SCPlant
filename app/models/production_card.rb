@@ -28,6 +28,14 @@ class ProductionCard < ActiveRecord::Base
     item.nil? ? "" : item.step_date
   end
 
+  def previous
+    ProductionCard.where( "id < ?", self.id ).last || ProductionCard.last
+  end
+
+  def next
+    ProductionCard.where( "id > ?", self.id ).first || ProductionCard.first
+  end
+
 
   def defaults
     myID = ProductionCard.maximum(:id).nil? ? 1 : ProductionCard.maximum(:id) + 1
