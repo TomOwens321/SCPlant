@@ -1,5 +1,20 @@
-<div id="gaugeContainer"></div>
-<input id="reading" type="hidden" value=<%= temperature %> />
-<div>
-  <h3>Current Soil Temperature: <%= temperature %></h3> 
+<table class="display subtable">
+<tr><td>
+<div class="left">
+  <div id="gaugeContainer0"></div>
+  <input id="reading0" type="hidden" value=<%= temperature(0) %> />
+  <div>
+    <h3>Soil Temperature: <%= temperature(0) %></h3> 
+  </div>
 </div>
+</td>
+<td>
+<div class="left">
+  <div id="gaugeContainer1"></div>
+  <input id="reading1" type="hidden" value=<%= temperature(1) %> />
+  <div>
+    <h3>Water Temperature: <%= temperature(1) %></h3> 
+  </div>
+</div>
+</td></tr>
+</table>
