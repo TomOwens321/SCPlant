@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "plants#index"
+
   resources :production_steps
 
   resources :production_cards
