@@ -5,4 +5,5 @@ RUN rm Gemfile.lock
 RUN bundle install
 EXPOSE 3000/tcp
 CMD ["rails", "server", "-b", "0.0.0.0"]
+RUN bundle install
 
