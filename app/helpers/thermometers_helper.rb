@@ -3,7 +3,7 @@ require 'lib/ghctl/owfuncs'
 
 module ThermometersHelper
 
-  OWHOST = '192.168.1.195'
+  OWHOST = '192.168.1.179'
 
   def temperature(sensor = 0)
     client = Onewire.client OWHOST
