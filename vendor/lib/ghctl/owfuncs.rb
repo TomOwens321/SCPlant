@@ -6,7 +6,7 @@ module OwFuncs
 		therms = []
 		client = Onewire.client host
 		client.dir.each do |c|
-			therms << c if client.dir(c).any? { |val| /\..*temperature/ =~ val }
+			therms << c if client.dir(c).any? { |val| /\.*temperature/ =~ val }
 		end
 		therms
 	end
