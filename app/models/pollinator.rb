@@ -1,15 +1,11 @@
-class Plant < ActiveRecord::Base
+class Pollinator < ActiveRecord::Base
   validates :name, presence: true
   validates :genus_id, presence: true
   validates :species_id, presence: true
 
   before_validation :set_other_params
 
-  has_many   :seeds
-  has_many   :locations, through: :seeds
-  has_many   :vendors,   through: :seeds
-  has_many   :production_cards
-  has_and_belongs_to_many :pollinators
+  has_and_belongs_to_many :plants
   
   belongs_to :family
   belongs_to :genus
@@ -33,23 +29,14 @@ class Plant < ActiveRecord::Base
     self.species.nil? ? "" : self.species.name
   end
 
-  def seeds_on_hand
-    self.seeds.sum(:remaining)
-  end
-
   def previous
-    Plant.where( "name < ?", self.name ).last || Plant.last
+    Pollinator.where( "name < ?", self.name ).last || Pollinator.last
   end
 
   def next
-    Plant.where( "name > ?", self.name ).first || Plant.first
+    Pollinator.where( "name > ?", self.name ).first || Pollinator.first
   end
-
-  def usda_link
-    symbol = (self.genus.name + "+" + self.species.name)
-    link = "http://plants.usda.gov/java/nameSearch?keywordquery=#{symbol}&mode=sciname"
-  end
-
+  
   private
 
   def set_other_params
