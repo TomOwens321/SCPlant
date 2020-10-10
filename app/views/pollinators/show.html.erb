@@ -53,7 +53,8 @@
 <div id="associate">
   <%= form_for @pollinator, url: associate_pollinator_path, method: :post do |f| %>
     <%= f.autocomplete_field :plants, autocomplete_plant_name_plants_path,
-                              id_element: '#plant_id', :update_elements => {} %>
+	    id_element: '#plant_id', :update_elements => {},
+            placeholder: "" %>
     <%= f.hidden_field :plants, id: "plant_id" %>
     <%= f.submit "Associate" %>
   <% end %>
