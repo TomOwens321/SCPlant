@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pollinators</h1>
+
+<table id="pollinator_table" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Family</th>
+      <th>Genus</th>
+      <th>Species</th>
+      <th>Common name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "pollinators/pollinator", collection: @pollinators %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pollinator', new_pollinator_path %>

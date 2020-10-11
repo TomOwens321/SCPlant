@@ -60,6 +60,19 @@
   <%= link_to 'Next', plant_path(@plant.next) %>
 </div>
 
+<% if @plant.pollinators.size > 0 %>
+<div id="pollinators">
+  <table class="display subtable">
+    <thead>
+      <th colspan="5"><h2><%= "Pollinators that visit #{@plant.name} in the wild" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "pollinators/pollinator", collection: @plant.pollinators.uniq %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+
 <% if @plant.locations.size > 0 %>
 <div id="locations">
   <table class="display subtable">

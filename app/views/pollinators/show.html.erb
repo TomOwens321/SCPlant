@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Pollinator <%= @pollinator.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @pollinator.name %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= link_to @pollinator.family_name, pollinator_family_path(@pollinator)  %>
+</p>
+
+<p>
+  <strong>Genus:</strong>
+  <%= link_to @pollinator.genus_name, @pollinator.genus %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= link_to @pollinator.species_name, @pollinator.species %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @pollinator.common_name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @pollinator.description %>
+</p>
+
+<%= link_to 'Edit', edit_pollinator_path(@pollinator) %> |
+<%= link_to 'Back', pollinators_path %> |
+<%= link_to 'Destroy', @pollinator, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<div class="right">
+  <%= link_to 'Prev', pollinator_path(@pollinator.previous) %> | 
+  <%= link_to 'Next', pollinator_path(@pollinator.next) %>
+</div>
+
+<% if @pollinator.plants.size > 0 %>
+<div id="plants">
+  <table class="display subtable">
+    <thead>
+      <th colspan="6"><h2><%= "Plants visited by #{@pollinator.name}" %></h2></th>
+    </thead>
+    <tbody>
+      <%= render partial: "plants/plant", collection:@pollinator.plants %>
+    </tbody>
+  </table>
+</div>
+<% end %>
+<br />
+<div id="associate">
+  <%= form_for @pollinator, url: associate_pollinator_path, method: :post do |f| %>
+    <%= f.autocomplete_field :plants, autocomplete_plant_name_plants_path,
+	    id_element: '#plant_id', :update_elements => {},
+            placeholder: "" %>
+    <%= f.hidden_field :plants, id: "plant_id" %>
+    <%= f.submit "Associate" %>
+  <% end %>
+</div>

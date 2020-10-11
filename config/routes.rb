@@ -19,6 +19,13 @@ Rails.application.routes.draw do
     get :autocomplete_plant_name, on: :collection
   end
 
+  resources :pollinators do
+    get :autocomplete_pollinator_name, on: :collection
+    member do
+      post 'associate'
+    end
+  end
+
   resources :common_names
 
   resources :species
@@ -30,6 +37,7 @@ Rails.application.routes.draw do
   end
 
   resources :thermometers
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
