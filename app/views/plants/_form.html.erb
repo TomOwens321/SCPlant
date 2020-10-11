@@ -44,9 +44,17 @@
     <%= f.text_field :germination_code %>
   </div>
   <div class="field">
+  <%= f.label :viability %><br>
+  <%= f.text_field :viability %>
+</div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+  <%= f.label :notes %><br>
+  <%= f.text_area :notes %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
