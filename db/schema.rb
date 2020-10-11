@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190314140802) do
+ActiveRecord::Schema.define(version: 20201011132713) do
 
   create_table "families", force: :cascade do |t|
     t.string   "name"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20190314140802) do
     t.datetime "updated_at",       null: false
     t.string   "germination_code"
     t.string   "series"
+    t.string   "notes"
+    t.string   "viability"
   end
 
   add_index "plants", ["family_id"], name: "index_plants_on_family_id"
