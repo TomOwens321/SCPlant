@@ -76,6 +76,6 @@ class ProductionCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_card_params
-      params.require(:production_card).permit(:card_number, :plant_id, :seed_id, :seed_quantity, :quantity_needed, :quantity_produced, :order_id, :seed_decremented, :active)
+      params.require(:production_card).permit(:card_number, :plant_id, :seed_id, :seed_quantity, :quantity_needed, :quantity_produced, :seed_decremented, :active)
     end
 end
