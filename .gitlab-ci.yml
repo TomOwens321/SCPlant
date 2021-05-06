@@ -6,4 +6,4 @@ build:
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $CI_REGISTRY/tomowens/scp:latest .
-    - docker push $CI_REGISTRY/tomowens/SCPlant/scp:latest
+    - docker push $CI_REGISTRY/tomowens/scplant/scp:latest
